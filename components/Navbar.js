@@ -54,7 +54,7 @@ const Navbar = () => {
     <section className="shadow-xl bg-white sticky top-0">
       <div className="container mx-auto py-2 text-[24px] flex justify-between items-center">
         <div className="cursor-pointer">
-          <Link href="/">Logo</Link>
+          <Link href="/">Market SQUare</Link>
         </div>
 
         <div className="relative cursor-pointer">
