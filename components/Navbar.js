@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
 import { FiShoppingCart } from "react-icons/fi";
+import { PiStorefrontDuotone } from "react-icons/pi";
 import { useRecoilState } from "recoil";
 import { cartState } from "../atoms/cartState";
 
@@ -36,25 +37,23 @@ const Navbar = () => {
 
 
   const menuItems = [
-    {
-      href: '/',
-      title: 'Homepage',
-    },
+    // {
+    //   href: '/',
+    //   title: 'Homepage',
+    // },
     {
       href: '/about',
       title: 'About',
     },
-    {
-      href: '/contact',
-      title: 'Contact',
-    },
+
   ];
 
   return (
     <section className="shadow-xl bg-white sticky top-0">
       <div className="container mx-auto py-2 text-[24px] flex justify-between items-center">
-        <div className="cursor-pointer">
-          <Link href="/">Market SQUare</Link>
+        <div className="cursor-pointer flex items-center">
+          <PiStorefrontDuotone />
+          <Link href="/"> Market SQUare</Link>
         </div>
 
         <div className="relative cursor-pointer">
@@ -80,17 +79,22 @@ const Navbar = () => {
       {isSidebarOpen && (
         <div
           ref={sidebarRef}
-          className={`bg-gray-200 w-64 h-screen fixed top-0 right-0 transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'
+          className={`bg-gray-200 w-64 h-screen max-h-[150px] fixed top-0 right-0 transform transition-transform duration-300 ease-in-out z-50 ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'
             }`}
         >
 
-          <ul className="p-6">
-            {menuItems.map((menuItem, index) => (
-              <li key={index}>
-                <Link href={menuItem.href}>{menuItem.title}</Link>
-              </li>
-            ))}
-          </ul>
+          <div className=" p-3 ">
+            <div className="flex items-center mb-2">
+              <PiStorefrontDuotone />
+              <h2 className="font-bold text-lg">Market SQUare</h2>
+            </div>
+
+            <Link href="/contact" className="hover:scale-105 mb-2">About</Link>
+            <br />
+            <Link href="mailto:bambobello5@gmail.com" className="hover:scale-[105px]">Contact</Link>
+
+          </div>
+
         </div>
       )}
     </section>

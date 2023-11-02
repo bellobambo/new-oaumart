@@ -37,7 +37,7 @@ const Product = ({ product }) => {
         </div>
 
         <button
-          className="bg-red-600 text-white py-4 px-12 mt-4 block mx-auto hover:bg-red-800 tooltip tooltip-bottom"
+          className="bg-red-600 text-white py-4 px-12 mt-4 block mx-auto hover:bg-red-800 tooltip tooltip-bottom z-[0]"
           onClick={addItemsToCart}
           
           data-tip="click multiple times to add same item to cart multiple times"

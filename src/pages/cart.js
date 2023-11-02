@@ -27,7 +27,7 @@ const Cart = () => {
   };
 
   return (
-    <div>
+    <div className="h-screen">
       <Navbar />
 
       <div className="container mx-auto">
