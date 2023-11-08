@@ -10,7 +10,7 @@ const CartList = ({ data }) => {
 
         <div>
           <div className="font-bold text-2xl">{name}</div>
-          <div>Qty: {quantity - 9}</div>
+          <div>Qty: {quantity -4}</div>
         </div>
 
         <div className="text-3xl font-bold"> ₦ {price * quantity}</div>

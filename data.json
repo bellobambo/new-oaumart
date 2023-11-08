@@ -2,23 +2,29 @@
     {
         "id": 1,
         "name": "Computer",
-        "price": 19.99,
+        "price": 40000,
         "image" :"/football.jpeg" ,
-        "quantity": 10
+        "image2" :"/pic.png" ,
+        "quantity": 10,
+        "desc" : "MacBook M2 Ship"
     },
     {
         "id": 2,
         "name": "Horse",
-        "price": 29.99,
-        "image": "/horse.jpeg",
-        "quantity": 5
+        "price": 18000,
+        "image": "/horse2.jpeg",
+        "image2": "/horse.jpeg",
+        "quantity": 5,
+        "desc" : "Adulf hitler 1909 Horse"
     },
     {
         "id": 3,
         "name": "Flower",
-        "price": 9.99,
-        "image": "/laptop.jpeg",
-        "quantity": 20
+        "price": 14000,
+        "image": "/roeses.jpeg",
+        "image2": "/laptop.jpeg",
+        "quantity": 20,
+        "desc" : "Rosline Flowers"
     }
 ]
 

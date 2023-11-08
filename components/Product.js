@@ -23,23 +23,36 @@ const Product = ({ product }) => {
   };
 
   return (
-    <div className="bg-[#fff] pt-6 pb-4 shadow-2xl">
-      <img
-        className="mx-auto w-[350px] h-[200px] object-contain"
-        src={product.image}
-        alt=""
-      />
+    <div className="bg-[#fff] pt-6 pb-4 shadow-2xl rounded-md">
+      <div className="carousel carousel-center max-w-md p-4 space-x-4 bg-white rounded-box">
+        <div className="carousel-item">
+
+          <img
+            className="mx-auto w-[350px] h-[200px] object-contain"
+            src={product.image}
+            alt=""
+          />
+        </div>
+        <div className="carousel-item">
+          <img
+            className="mx-auto w-[350px] h-[200px] object-contain"
+            src={product.image2}
+            alt=""
+          />
+        </div>
+      </div>
 
       <div className="mt-4 px-6">
         <div className="flex items-center justify-between text-[26px]">
           <h1>{product.name}</h1>
           <h3>₦{product.price}</h3>
         </div>
+          <h3>{product.desc}</h3>
 
         <button
-          className="bg-red-600 text-white py-4 px-12 mt-4 block mx-auto hover:bg-red-800 tooltip tooltip-bottom z-[0]"
+          className="bg-red-600 text-white py-4 px-12 mt-4 block mx-auto hover:bg-red-800 tooltip tooltip-bottom z-[0] rounded-lg"
           onClick={addItemsToCart}
-          
+
           data-tip="click multiple times to add same item to cart multiple times"
         >
           Add To Cart
