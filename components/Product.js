@@ -23,7 +23,7 @@ const Product = ({ product }) => {
   };
 
   return (
-    <div className="bg-[#fff] pt-6 pb-4 shadow-2xl rounded-md">
+    <div className="bg-[#fff] pt-6 pb-4 shadow-2xl rounded-md items-center flex flex-col justify-center ">
       <div className="carousel carousel-center max-w-md p-4 space-x-4 bg-white rounded-box">
         <div className="carousel-item">
 
@@ -50,7 +50,7 @@ const Product = ({ product }) => {
           <h3>{product.desc}</h3>
 
         <button
-          className="bg-red-600 text-white py-4 px-12 mt-4 block mx-auto hover:bg-red-800 tooltip tooltip-bottom z-[0] rounded-lg"
+          className="bg-red-600 text-white py-4 px-12 mt-4 block mx-auto hover:bg-red-800 tooltip tooltip-bottom z-[1] rounded-lg"
           onClick={addItemsToCart}
 
           data-tip="click multiple times to add same item to cart multiple times"

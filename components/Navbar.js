@@ -49,7 +49,7 @@ const Navbar = () => {
   ];
 
   return (
-    <section className="shadow-xl bg-white sticky top-0">
+    <section className="shadow-xl bg-white sticky top-0 z-10">
       <div className="container mx-auto py-2 text-[24px] flex justify-between items-center">
         <div className="cursor-pointer flex items-center">
           <PiStorefrontDuotone />
