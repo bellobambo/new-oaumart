@@ -1,12 +1,17 @@
+'use client'
+
+
 import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
 import { FiShoppingCart } from "react-icons/fi";
 import { PiStorefrontDuotone } from "react-icons/pi";
-import { useRecoilState } from "recoil";
-import { cartState } from "../atoms/cartState";
+import SignUp from "./SignUp";
+
+
+
 
 const Navbar = () => {
-  const [cartItem] = useRecoilState(cartState);
+
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const sidebarRef = useRef(null);
 
@@ -49,23 +54,20 @@ const Navbar = () => {
   ];
 
   return (
-    <section className="shadow-xl bg-white sticky top-0 z-10">
+    <section className="shadow-xl bg-white sticky top-0 z-10 flex">
       <div className="container mx-auto py-2 text-[24px] flex justify-between items-center">
         <div className="cursor-pointer flex items-center">
           <PiStorefrontDuotone />
           <Link href="/"> Market²</Link>
         </div>
 
-        <div className="relative cursor-pointer">
-          <Link href="/cart">
-            <div>
-              <FiShoppingCart />
-              <span className="absolute -top-2 -right-2 text-[13px] bg-red-600 h-[18px] w-[18px] rounded-full grid place-items-center text-white">
-                {cartItem.length}
-              </span>
-            </div>
+        <div>
+          <Link href='https://wa.me/message/2EU7DKQNESR5K1'>
+          Sell
           </Link>
         </div>
+
+        {/* <SignUp /> */}
 
         <button
           onClick={toggleSidebar}
@@ -74,6 +76,7 @@ const Navbar = () => {
           &#9776;
         </button>
       </div>
+
 
       {/* Sidebar */}
       {isSidebarOpen && (
