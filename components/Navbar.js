@@ -58,11 +58,11 @@ const Navbar = () => {
       <div className="container mx-auto py-2 text-[24px] flex justify-between items-center">
         <div className="cursor-pointer flex items-center">
           <PiStorefrontDuotone />
-          <Link href="/"> Market²</Link>
+          <Link href="/">OAU Market²</Link>
         </div>
 
         <div>
-          <Link href='https://wa.me/message/2EU7DKQNESR5K1'>
+          <Link href='https://wa.me/message/2EU7DKQNESR5K1' target="_blank">
           Sell
           </Link>
         </div>
@@ -89,7 +89,7 @@ const Navbar = () => {
           <div className=" p-3 ">
             <div className="flex items-center mb-2">
               <PiStorefrontDuotone />
-              <h2 className="font-bold text-lg">Market²</h2>
+              <h2 className="font-bold text-lg">OAU Market²</h2>
             </div>
 
             <Link href="/contact" className="hover:scale-105 mb-2">About</Link>

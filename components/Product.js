@@ -29,9 +29,7 @@ const Product = ({ product }) => {
           <div className="text-center">
 
 
-            <button className="" >
-              Add To Cart
-            </button>
+          <button className="btn btn-active btn-accent my-3">Buy Now</button>
           </div>
         </div>
 

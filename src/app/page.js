@@ -48,14 +48,14 @@ export default function Home() {
         <button
           onClick={() => setCurrentPage(currentPage - 1)}
           disabled={currentPage === 1}
-          className=""
+          className="btn btn-outline btn-accent"
         >
           Previous
         </button>
         <button
           onClick={() => setCurrentPage(currentPage + 1)}
           disabled={endIndex >= filteredProducts.length}
-          className=""
+          className="btn btn-outline btn-accent"
         >
           Next
         </button>
