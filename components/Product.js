@@ -10,8 +10,8 @@ const Product = ({ product }) => {
 
     <>
 
-      <div className="flex justify-center ">
 
+      <div className="flex justify-center ">
         <div>
 
           <div className="carousel carousel-center max-w-md p-4 space-x-4 bg-neutral rounded-box ">
@@ -23,9 +23,19 @@ const Product = ({ product }) => {
               <img src={product.image2} className=" h-56 max-w-[200px]" />
             </div>
           </div>
-          <h1>{product.name}</h1>
-          <h3>₦{product.price}</h3>
-          <h3>{product.desc}</h3>
+          <div className="flex justify-between">
+            <span>
+              <h1>{product.name}</h1>
+              <h3>₦{product.price}</h3>
+              <h3>{product.desc}</h3>
+
+            </span>
+            <span className="justify-self-end my-12" >
+
+              <div className="badge badge-outline">{product.item}</div>
+            </span>
+
+          </div>
 
           <div className="text-center">
             {product.link && (

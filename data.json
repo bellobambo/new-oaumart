@@ -7,7 +7,9 @@
         "image2": "/pic.png",
         "quantity": 10,
         "desc": "MacBook M2 Ship",
-        "link": "https://wa.me/message/2EU7DKQNESR5K1"
+        "link": "https://wa.me/message/2EU7DKQNESR5K1",
+        "item" : "edibles"
+        
     },
     {
         "id": 2,
@@ -17,7 +19,8 @@
         "image2": "/horse.jpeg",
         "quantity": 5,
         "desc": "Adulf hitler 1909 Horse",
-        "link": "https://wa.me/message/2EU7DKQNESR5K1"
+        "link": "https://wa.me/message/2EU7DKQNESR5K1",
+        "item" : "non-edibles"
     },
     {
         "id": 3,
@@ -27,6 +30,7 @@
         "image2": "/laptop.jpeg",
         "quantity": 20,
         "desc": "Rosline Flowers",
-        "link": "https://wa.me/message/2EU7DKQNESR5K1"
+        "link": "https://wa.me/message/2EU7DKQNESR5K1",
+        "item" : "edibles"
     }
 ]
