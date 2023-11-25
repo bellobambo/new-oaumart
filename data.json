@@ -3,10 +3,11 @@
         "id": 1,
         "name": "Computer",
         "price": 40000,
-        "image" :"/football.jpeg" ,
-        "image2" :"/pic.png" ,
+        "image": "/football.jpeg",
+        "image2": "/pic.png",
         "quantity": 10,
-        "desc" : "MacBook M2 Ship"
+        "desc": "MacBook M2 Ship",
+        "link": "https://wa.me/message/2EU7DKQNESR5K1"
     },
     {
         "id": 2,
@@ -15,7 +16,8 @@
         "image": "/horse2.jpeg",
         "image2": "/horse.jpeg",
         "quantity": 5,
-        "desc" : "Adulf hitler 1909 Horse"
+        "desc": "Adulf hitler 1909 Horse",
+        "link": "https://wa.me/message/2EU7DKQNESR5K1"
     },
     {
         "id": 3,
@@ -24,7 +26,7 @@
         "image": "/roeses.jpeg",
         "image2": "/laptop.jpeg",
         "quantity": 20,
-        "desc" : "Rosline Flowers"
+        "desc": "Rosline Flowers",
+        "link": "https://wa.me/message/2EU7DKQNESR5K1"
     }
 ]
-

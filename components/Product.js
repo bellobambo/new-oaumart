@@ -1,4 +1,5 @@
 
+import Link from "next/link";
 import React from "react";
 
 
@@ -27,9 +28,13 @@ const Product = ({ product }) => {
           <h3>{product.desc}</h3>
 
           <div className="text-center">
+            {product.link && (
+              <Link className="btn btn-active btn-accent my-3" href={product.link}>
+                Bargain
+              </Link>
+            )}
 
 
-          <button className="btn btn-active btn-accent my-3">Buy Now</button>
           </div>
         </div>
 
