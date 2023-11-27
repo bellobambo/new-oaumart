@@ -54,27 +54,44 @@ const Navbar = () => {
   ];
 
   return (
-    <section className="shadow-xl bg-white sticky top-0 z-10 flex">
-      <div className="container mx-auto py-2 text-[24px] flex justify-between items-center">
-        <div className="cursor-pointer flex items-center">
-          <PiStorefrontDuotone />
-          <Link href="/">OAU Market²</Link>
-        </div>
+    <section className="shadow-xl border-2 border-slate-800 sticky top-0 z-10 flex">
+      <div className="container mx-auto py-2 text-[24px] flex justify-between items-center rounded-md">
 
-        <div>
-          <Link href='https://wa.me/message/2EU7DKQNESR5K1' target="_blank">
-          Sell
-          </Link>
-        </div>
 
-        {/* <SignUp /> */}
 
-        <button
+
+        {/* <button
           onClick={toggleSidebar}
-          className="cursor-pointer text-[24px] ml-4"
+          className="cursor-pointer text-[24px] "
         >
           &#9776;
-        </button>
+        </button> */}
+        <div className="navbar bg-base-100">
+          <div className="flex-1">
+            <div className="cursor-pointer flex items-center">
+              <PiStorefrontDuotone />
+              <Link href="/">OAU Market²</Link>
+            </div>
+          </div>
+          <div className="">
+            <ul className="menu menu-horizontal px-1 text-center">
+              <Link href='/sell'target="_blank">
+                Sell
+              </Link>
+              <li>
+                <details>
+                  <summary>
+
+                  </summary>
+                  <ul className="p-2 bg-base-100 rounded-t-none">
+                    <li><a>About</a></li>
+                    <li><a>Info</a></li>
+                  </ul>
+                </details>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
 
 
