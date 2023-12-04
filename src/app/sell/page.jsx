@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function page() {
     return (
-        <div className='grid grid-cols-1  gap-4 mx-10  md:flex md:justify-between'>
+        <div className='grid grid-cols-1  gap-4 mx-10  md:flex md:justify-between mb-20'>
             <div className="card w-96 bg-base-100 shadow-xl border-2 border-slate-700">
                 <figure className="px-10 pt-10">
 
