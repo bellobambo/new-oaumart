@@ -5,6 +5,7 @@ import './globals.css'
 import Navbar from "../../components/Navbar";
 import Providers from "../../components/Providers";
 import News from "../../components/News";
+import Footer from "../../components/Footer";
 
 export const metadata = {
   title: 'OAU Market²',
@@ -13,12 +14,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-theme="luxury">
+    <html lang="en" data-theme="aqua">
       <body>
         <Providers>
           <Navbar />
           <News/>
           {children}
+          <Footer/>
         </Providers>
       </body>
     </html>

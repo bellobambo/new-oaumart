@@ -84,8 +84,8 @@ const Navbar = () => {
 
                   </summary>
                   <ul className="p-2 bg-base-100 rounded-t-none">
-                    <li><a>About</a></li>
-                    <li><a>Info</a></li>
+                    <li><a><Link href='/about' >About us</Link></a></li>
+                    <li><a><Link href="mailto:bellobambo21@email.com">Contact</Link></a></li>
                   </ul>
                 </details>
               </li>
