@@ -58,41 +58,32 @@ const Navbar = () => {
       <div className="container mx-auto py-2 text-[24px] flex justify-between items-center rounded-md">
 
 
-
-
-        {/* <button
-          onClick={toggleSidebar}
-          className="cursor-pointer text-[24px] "
-        >
-          &#9776;
-        </button> */}
         <div className="navbar bg-base-100">
           <div className="flex-1">
             <div className="cursor-pointer flex items-center">
               <PiStorefrontDuotone />
-              <Link href="/">OAU Market²</Link>
+              <Link href="/">OAUmart</Link>
             </div>
           </div>
-          <div className="">
-            <ul className="menu menu-horizontal px-1 text-center">
-              <Link href='/sell'target="_blank">
-                Sell
-              </Link>
-              <li>
-                <details>
-                  <summary>
 
-                  </summary>
-                  <ul className="p-2 bg-base-100 rounded-t-none">
-                    <li><a><Link href='/about' >About us</Link></a></li>
-                    <li><a><Link href="mailto:bellobambo21@email.com">Contact</Link></a></li>
-                  </ul>
-                </details>
-              </li>
-            </ul>
+
+          <div className="flex">
+            <Link className="btn btn-active btn-accent " href='/sell' target="_blank">
+              Sell
+            </Link>
+            <div className="dropdown dropdown-end">
+              <div tabIndex={0} role="button" className="btn m-1">&#9759;</div>
+              <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                <li><a><Link href='/about' >&#8505; About us</Link></a></li>
+                <li><a><Link href="mailto:bellobambo21@email.com">&#9993; Contact</Link></a></li>
+
+              </ul>
+            </div>
           </div>
         </div>
       </div>
+
+
 
 
       {/* Sidebar */}

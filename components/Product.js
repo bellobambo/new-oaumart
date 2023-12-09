@@ -12,12 +12,12 @@ const Product = ({ product }) => {
 
 
       <div className="flex justify-center ">
-        <div>
+        <div className=" mx-auto ">
 
           <div className="carousel carousel-center max-w-md p-4 space-x-4 bg-neutral rounded-box ">
             <div className="carousel-item">
 
-              <img src={product.image} className=" max-w-[200px] h-56" />
+              <img src={product.image} className=" max-w-[150px] h-56" />
             </div>
             <div className="carousel-item">
               <img src={product.image2} className=" h-56 max-w-[200px]" />

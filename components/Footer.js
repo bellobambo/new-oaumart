@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="text-center info w-full py-4">
         <hr className=''/>
-      <p>&copy; {currentYear} OAU Market². All Rights Reserved.</p>
+      <p>&copy; {currentYear} OAUmart. All Rights Reserved.</p>
     </footer>
   );
 };
