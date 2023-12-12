@@ -1,10 +1,13 @@
 [
     {
+        "_comment": "comment text goes here...",
+
         "id": 1,
-        "name": "Computer",
+        "name": "Computer(bambo)",
         "price": 40000,
         "image": "/football.jpeg",
         "image2": "/pic.png",
+        "date": "Tue DEC 12 2020",
         "quantity": 10,
         "desc": "MacBook M2 Ship",
         "link": "https://wa.me/message/2EU7DKQNESR5K1",
@@ -17,6 +20,7 @@
         "price": 18000,
         "image": "/horse2.jpeg",
         "image2": "/horse.jpeg",
+        "date": "Tue DEC 12 2020",
         "quantity": 5,
         "desc": "Adulf hitler 1909 Horse",
         "link": "https://wa.me/message/2EU7DKQNESR5K1",
@@ -28,6 +32,7 @@
         "price": 14000,
         "image": "/roeses.jpeg",
         "image2": "/laptop.jpeg",
+        "date": "Tue DEC 12 2020",
         "quantity": 20,
         "desc": "Rosline Flowers",
         "link": "https://wa.me/message/2EU7DKQNESR5K1",

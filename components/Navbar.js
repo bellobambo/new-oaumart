@@ -74,8 +74,9 @@ const Navbar = () => {
             <div className="dropdown dropdown-end">
               <div tabIndex={0} role="button" className="btn m-1">&#9759;</div>
               <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                <li><a><Link href='/about' >&#8505; About us</Link></a></li>
-                <li><a><Link href="mailto:bellobambo21@email.com">&#9993; Contact</Link></a></li>
+                <li><Link href="/apartment" className="flex"> <span>😴</span>  <span>BedSpace/Apartment</span> </Link></li>
+                <li><Link href='/about' >&#8505; About us</Link></li>
+                <li><Link href="mailto:bellobambo21@email.com">&#9993; Contact</Link></li>
 
               </ul>
             </div>

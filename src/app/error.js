@@ -15,6 +15,7 @@ export default function Error({ error, reset }) {
         onClick={
           () => reset()
         }
+        className="btn btn-active btn-accent my-3"
       >
         Try again
       </button>

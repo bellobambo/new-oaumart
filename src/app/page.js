@@ -3,7 +3,7 @@
 import data from "/data.json";
 
 import Product from "../../components/Product";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -21,7 +21,7 @@ export default function Home() {
   const productsToDisplay = filteredProducts.slice(startIndex, endIndex);
 
   return (
-    <div className="">
+    <div>
       <div className="flex flex-col items-center text-center m-5">
         <h1 className="">Our Products</h1>
         <br />
@@ -44,7 +44,7 @@ export default function Home() {
       <section className="m-5">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
           {productsToDisplay.map((product) => (
-            <Product key={product.id} product={product} />
+              <Product key={product.id} product={product} />
           ))}
         </div>
       </section>

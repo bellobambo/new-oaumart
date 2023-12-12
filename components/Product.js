@@ -1,6 +1,10 @@
 
 import Link from "next/link";
-import React from "react";
+import React, { Suspense } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
+
 
 
 const Product = ({ product }) => {
@@ -11,16 +15,24 @@ const Product = ({ product }) => {
     <>
 
 
-      <div className="flex justify-center ">
+      <div className="flex justify-center mb-20">
         <div className=" mx-auto ">
 
           <div className="carousel carousel-center max-w-md p-4 space-x-4 bg-neutral rounded-box ">
-            <div className="carousel-item">
+            <div className="carousel-item min-w-[100px]">
+              <Suspense fallback={<p>Loading....</p>}>
 
-              <img src={product.image} className=" max-w-[150px] h-56" />
+                <LazyLoadImage alt='img' placeholderSrc={product.image} effect="blur"  src={product.image} className=" max-w-[150px] h-56" />
+
+              </Suspense>
+
             </div>
-            <div className="carousel-item">
-              <img src={product.image2} className=" h-56 max-w-[200px]" />
+            <div className="carousel-item min-w-[100px]">
+              <Suspense fallback={<p>Loading....</p>}>
+
+                <LazyLoadImage alt='img' placeholderSrc={product.image} effect="blur" src={product.image2} className=" h-56 max-w-[200px]" />
+              </Suspense>
+
             </div>
           </div>
           <div className="flex justify-between">
@@ -28,6 +40,7 @@ const Product = ({ product }) => {
               <h1>{product.name}</h1>
               <h3>₦{product.price}</h3>
               <h3>{product.desc}</h3>
+              <h3>{product.date}</h3>
 
             </span>
             <span className="justify-self-end my-12" >
