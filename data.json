@@ -3,39 +3,39 @@
         "_comment": "comment text goes here...",
 
         "id": 1,
-        "name": "Computer(bambo)",
-        "price": 40000,
-        "image": "/football.jpeg",
-        "image2": "/pic.png",
-        "date": "Tue DEC 12 2020",
+        "name": "AirForce(Mileaux-Store)",
+        "price": "15,000 ",
+        "image": "/mileaux.jpeg",
+        "image2": "/mileaux.jpeg",
+        "date": "DEC 14 2023",
         "quantity": 10,
-        "desc": "MacBook M2 Ship",
+        "desc": "",
         "link": "https://wa.me/message/2EU7DKQNESR5K1",
         "item" : "edibles"
         
     },
     {
         "id": 2,
-        "name": "Horse",
-        "price": 18000,
-        "image": "/horse2.jpeg",
-        "image2": "/horse.jpeg",
-        "date": "Tue DEC 12 2020",
+        "name": "Toast Bread(Banky's Toast)",
+        "price": "300",
+        "image": "/banky.jpeg",
+        "image2": "/banky.jpeg",
+        "date": " DEC 14 2023",
         "quantity": 5,
-        "desc": "Adulf hitler 1909 Horse",
+        "desc": "",
         "link": "https://wa.me/message/2EU7DKQNESR5K1",
-        "item" : "non-edibles"
+        "item" : "edibles"
     },
     {
         "id": 3,
         "name": "Flower",
-        "price": 14000,
-        "image": "/roeses.jpeg",
-        "image2": "/laptop.jpeg",
-        "date": "Tue DEC 12 2020",
+        "price": "4,000",
+        "image": "/trendytrove.jpeg",
+        "image2": "/trendytrove.jpeg",
+        "date": " DEC 14 2023",
         "quantity": 20,
-        "desc": "Rosline Flowers",
+        "desc": "",
         "link": "https://wa.me/message/2EU7DKQNESR5K1",
-        "item" : "edibles"
+        "item" : "non-edibles"
     }
 ]
