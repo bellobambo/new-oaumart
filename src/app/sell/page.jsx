@@ -12,7 +12,7 @@ export default function page() {
                     ADS
                     <div className="badge">₦300/Post/Day</div>
                 </button>
-                <Link className='btn btn-accent' href='"https://wa.me/message/2EU7DKQNESR5K1"'>Bargain </Link>
+                <Link className='btn btn-accent' href='https://wa.me/message/2EU7DKQNESR5K1'>Bargain </Link>
 
             </div>
 

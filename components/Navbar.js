@@ -68,13 +68,13 @@ const Navbar = () => {
 
 
           <div className="flex">
-            <Link className="btn btn-active btn-accent " href='/sell' target="_blank">
+            <Link className="btn btn-active btn-accent " href='/sell' >
               Sell
             </Link>
             <div className="dropdown dropdown-end">
               <div tabIndex={0} role="button" className="btn m-1">Quick Action</div>
               <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                <li><Link href="/apartment" className="flex"> <span>😴</span>  <span>BedSpace/Apartment</span> </Link></li>
+                <li><Link href="/bedspace" className="flex"> <span>😴</span>  <span>BedSpace</span> </Link></li>
                 <li><Link href='/about' >&#8505; About us</Link></li>
                 <li><Link href="mailto:bellobambo21@email.com">&#9993; Contact</Link></li>
 

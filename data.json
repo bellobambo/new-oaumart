@@ -10,7 +10,7 @@
         "date": "DEC 14 2023",
         "quantity": 10,
         "desc": "",
-        "link": "https://wa.me/message/2EU7DKQNESR5K1",
+        "link": "https://wa.link/ptubm2",
         "item" : "edibles"
         
     },
@@ -23,19 +23,19 @@
         "date": " DEC 14 2023",
         "quantity": 5,
         "desc": "",
-        "link": "https://wa.me/message/2EU7DKQNESR5K1",
+        "link": "https://wa.link/t2e6t3",
         "item" : "edibles"
     },
     {
         "id": 3,
-        "name": "Flower",
+        "name": "Flower(TrendyTrove)",
         "price": "4,000",
         "image": "/trendytrove.jpeg",
         "image2": "/trendytrove.jpeg",
         "date": " DEC 14 2023",
         "quantity": 20,
         "desc": "",
-        "link": "https://wa.me/message/2EU7DKQNESR5K1",
+        "link": "https://wa.link/ua6rqw",
         "item" : "non-edibles"
     }
 ]
