@@ -38,8 +38,8 @@ const BedSpace = () => {
         <div className="grid grid-flow-col gap-5 text-center auto-cols-max">
           <div className='flex justify-end mx-5 gap-2'>
             <button className="btn">
-            Moremi  block 
-              <div className="badge">70k</div>
+            Moremi block 
+              <div className="badge">60k</div>
             </button>
             <Link className='btn btn-accent' href='https://wa.me/message/2EU7DKQNESR5K1'target="_blank">Bargain </Link>
 
