@@ -76,7 +76,7 @@ const Navbar = () => {
               <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                 <li><Link href="/bedspace" className="flex"> <span>😴</span>  <span>BedSpace</span> </Link></li>
                 <li><Link href='/about' >&#8505; About us</Link></li>
-                <li><Link href="mailto:bellobambo21@email.com">&#9993; Contact</Link></li>
+                <li><Link href="mailto:oaumart@gmail.com">&#9993; Contact</Link></li>
 
               </ul>
             </div>
@@ -103,7 +103,7 @@ const Navbar = () => {
 
             <Link href="/contact" className="hover:scale-105 mb-2">About</Link>
             <br />
-            <Link href="mailto:bambobello5@gmail.com" className="hover:scale-[105px]">Contact</Link>
+            <Link href="mailto:oaumart@gmail.com" className="hover:scale-[105px]">Contact</Link>
 
           </div>
 
