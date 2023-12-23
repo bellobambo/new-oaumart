@@ -39,13 +39,14 @@ const Product = ({ product }) => {
             <span>
               <h1>{product.name}</h1>
               <h3>₦{product.price}</h3>
-              <h3>{product.desc}</h3>
+              <h3>{product.desc }</h3>
               <h3>{product.date}</h3>
 
-            </span>
+            </span> 
+            
             <span className="justify-self-end my-12" >
 
-              <div className="badge badge-outline">{product.item}</div>
+              <div className="badge badge-outline mx-2">{product.item}</div>
             </span>
 
           </div>
