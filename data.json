@@ -61,5 +61,17 @@
         "desc": "Stirfry with Turkey, Samosa and Springroll  ",
         "link": "https://wa.link/aer939",
         "item" : "edibles"
-    }
+    },
+    {
+        "id": 6,
+        "name": "Pranda Sneakers(Gheefted Empire 🥰🥰)",
+        "price": "20,000",
+        "image": "/gheefted.jpeg",
+        "image2": "/gheefted2.jpeg",
+        "date": "DEC 26 2023",
+        "quantity": 20,
+        "desc": "",
+        "link": "https://wa.link/0qznub",
+        "item": "non-edibles"
+      }
 ]

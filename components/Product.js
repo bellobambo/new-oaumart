@@ -46,6 +46,7 @@ const Product = ({ product }) => {
             
             <span className="justify-self-end my-12" >
 
+<br></br>
               <div className="badge badge-outline mx-2">{product.item}</div>
             </span>
 

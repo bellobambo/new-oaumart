@@ -1,19 +1,29 @@
-'use client'
+'use client';
 
-import data from "/data.json";
+import data from '/data.json';
 
-import Product from "../../components/Product";
-import { Suspense, useState } from "react";
+import Product from '../../components/Product';
+import { Suspense, useState } from 'react';
 
 export default function Home() {
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const productsPerPage = 5;
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [sortByDate, setSortByDate] = useState(true); // Added state for sorting by date
+  const productsPerPage = 6;
 
-  const filteredProducts = data.filter((product) =>
-    product.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
-    (selectedCategory === "All" || product.item.toLowerCase() === selectedCategory.toLowerCase())
+  // Function to sort products by date in descending order
+  const sortProductsByDate = (products) => {
+    return products.sort((a, b) => new Date(b.date) - new Date(a.date));
+  };
+
+  // Update filtering logic to use the sorted products
+  const filteredProducts = sortProductsByDate(
+    data.filter(
+      (product) =>
+        product.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
+        (selectedCategory === 'All' || product.item.toLowerCase() === selectedCategory.toLowerCase())
+    )
   );
 
   const startIndex = (currentPage - 1) * productsPerPage;
@@ -34,9 +44,15 @@ export default function Home() {
         <details className="dropdown my-3">
           <summary className="m-1 btn">Filter Product</summary>
           <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-            <li><a onClick={() => setSelectedCategory("All")}>All</a></li>
-            <li><a onClick={() => setSelectedCategory("Edibles")}>Edibles</a></li>
-            <li><a onClick={() => setSelectedCategory("Non-Edibles")}>Non-Edibles</a></li>
+            <li>
+              <a onClick={() => setSelectedCategory('All')}>All</a>
+            </li>
+            <li>
+              <a onClick={() => setSelectedCategory('Edibles')}>Edibles</a>
+            </li>
+            <li>
+              <a onClick={() => setSelectedCategory('Non-Edibles')}>Non-Edibles</a>
+            </li>
           </ul>
         </details>
       </div>
@@ -44,7 +60,7 @@ export default function Home() {
       <section className="m-5">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
           {productsToDisplay.map((product) => (
-              <Product key={product.id} product={product} />
+            <Product key={product.id} product={product} />
           ))}
         </div>
       </section>
