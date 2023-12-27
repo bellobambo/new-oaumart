@@ -53,6 +53,7 @@ export const Emailjs = () => {
                         </label>
                         <input
                             className="appearance-none  rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline bg-white border-2 border-blue-300"
+                            placeholder='100,200,300...'
                             type="text"
                             name="user_name"
                         />
