@@ -1,0 +1,112 @@
+[
+    {
+
+        "id": 1,
+        "hostel": "Awo renovated block",
+        "price": "Negotiable",
+        "contact" : "https://wa.link/3qb8g3",
+        "name" : "ATARAXIA_PROPERTIES",
+        "gender" : "male"
+
+        
+        
+    },
+    {
+
+        "id": 2,
+        "hostel": "Faj ",
+        "price": "Negotiable",
+        "contact" : "https://wa.link/3qb8g3",
+        "name" : "ATARAXIA_PROPERTIES",
+        "gender" : "male"
+
+        
+        
+    },
+    {
+
+        "id": 3,
+        "hostel": "Moremi",
+        "price": "Negotiable",
+        "contact" : "https://wa.link/zqh2jo",
+        "name" : "RAASCH",
+        "gender" : "female"
+
+        
+    },
+    {
+
+        "id": 4,
+        "hostel": "Awo Normal Block",
+        "price": "Negotiable",
+        "contact" : "https://wa.link/3qb8g3",
+        "name" : "ATARAXIA_PROPERTIES",
+        "gender" : "male"
+
+        
+    },
+    {
+
+        "id": 5,
+        "hostel": "Mozambique",
+        "price": "Negotiable",
+        "contact" : "https://wa.link/zqh2jo",
+        "name" : "RAASCH",
+        "gender" : "female"
+
+        
+    },
+    {
+
+        "id": 6,
+        "hostel": "Alumni",
+        "price": "Negotiable",
+        "contact" : "https://wa.link/zqh2jo",
+        "name" : "RAASCH",
+        "gender" : "female"
+
+        
+    },
+    {
+
+        "id": 7,
+        "hostel": "Fajuyi",
+        "price": "Negotiable",
+        "contact" : "https://wa.link/zqh2jo",
+        "name" : "RAASCH",
+        "gender" : "male"
+
+        
+    },
+    {
+
+        "id": 8,
+        "hostel": "Angola",
+        "price": "Negotiable",
+        "contact" : "https://wa.link/zqh2jo",
+        "name" : "RAASCH",
+        "gender" : "male"
+
+        
+    },
+    {
+
+        "id": 9,
+        "hostel": "ETF",
+        "price": "Negotiable",
+        "contact" : "https://wa.link/zqh2jo",
+        "name" : "RAASCH",
+        "gender" : "male"
+
+        
+    },
+    {
+
+        "id": 10,
+        "hostel": "AWO",
+        "price": "Negotiable",
+        "contact" : "https://wa.link/zqh2jo",
+        "name" : "RAASCH",
+        "gender" : "male"
+    }
+]
