@@ -73,5 +73,17 @@
         "desc": "",
         "link": "https://wa.link/0qznub",
         "item": "non-edibles"
+      },
+    {
+        "id": 7,
+        "name": "Toyorh(Accessories & more)",
+        "price": "2,500/1,500",
+        "image": "/toyoh.jpeg",
+        "image2": "/toyoh2.jpeg",
+        "date": "DEC 31 2023",
+        "quantity": 20,
+        "desc": "",
+        "link": "https://wa.link/l4ois5",
+        "item": "non-edibles"
       }
 ]
