@@ -85,5 +85,17 @@
         "desc": "",
         "link": "https://wa.link/l4ois5",
         "item": "non-edibles"
+      },
+    {
+        "id": 8,
+        "name": "Tapioca Treats",
+        "price": "2,000/1,500",
+        "image": "/tapioca.jpeg",
+        "image2": "/tapioca2.jpeg",
+        "date": "JAN 06 2024",
+        "quantity": 20,
+        "desc": "",
+        "link": "https://wa.link/b1bts5",
+        "item": "edibles"
       }
 ]
