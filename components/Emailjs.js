@@ -6,7 +6,7 @@ import Check from './Check.json'
 import Lottie from 'lottie-react';
 import { useRouter } from 'next/navigation';
 
-export const Emailjs = () => {
+export const Emailjs = ({setShowModal}) => {
     const form = useRef();
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -24,10 +24,13 @@ export const Emailjs = () => {
             form.current.reset();
             setIsModalOpen(true);
 
+            
             setTimeout(() => {
                 setIsModalOpen(false);
-                router.push('/'); // Navigate to the home page
-            }, 4500);
+                setShowModal(false);
+
+                // router.push('/'); // Navigate to the home page
+            }, 4600);
         } catch (error) {
             setIsSubmitting(false);
             alert('Unable to Send Email. Try again later.');
@@ -56,6 +59,7 @@ export const Emailjs = () => {
                             placeholder='100,200,300...'
                             type="text"
                             name="user_name"
+                            required
                         />
                     </div>
                     <div className="mb-4">
@@ -66,6 +70,7 @@ export const Emailjs = () => {
                             className="appearance-none rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline bg-white border-2 border-blue-300"
                             type="email"
                             name="user_email"
+                            required
                         />
                     </div>
                     <div className="mb-4">
@@ -75,6 +80,7 @@ export const Emailjs = () => {
                         <textarea
                             className="appearance-none rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline bg-white border-2  border-blue-300"
                             name="message"
+required
                         />
                     </div>
                     <div className="flex items-center justify-center">

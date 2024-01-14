@@ -3,13 +3,16 @@
 import data from '/data.json';
 
 import Product from '../../components/Product';
-import { Suspense, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
+import { Emailjs } from '../../components/Emailjs';
+
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [sortByDate, setSortByDate] = useState(true); // Added state for sorting by date
+  const [showModal, setShowModal] = useState(false);
   const productsPerPage = 6;
 
   // Function to sort products by date in descending order
@@ -25,6 +28,25 @@ export default function Home() {
         (selectedCategory === 'All' || product.item.toLowerCase() === selectedCategory.toLowerCase())
     )
   );
+
+
+
+
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setShowModal(true);
+    }, 5000);
+
+    return () => clearTimeout(timeoutId); // Cleanup the timeout on component unmount
+
+
+  }, []);
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
 
   const startIndex = (currentPage - 1) * productsPerPage;
   const endIndex = startIndex + productsPerPage;
@@ -57,8 +79,21 @@ export default function Home() {
         </details>
       </div>
 
+      {showModal && (
+        <div className="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-75 flex items-center justify-center z-50">
+          <button
+            onClick={() => setShowModal(false)}
+            className="absolute top-7  text-white font-bold text-[40px] hover:text-black "
+          >
+           &#9746;
+          </button>
+          <Emailjs setShowModal={setShowModal} />
+
+        </div>
+      )}
       <section className="m-5">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
+
           {productsToDisplay.map((product) => (
             <Product key={product.id} product={product} />
           ))}

@@ -3,6 +3,7 @@ import React, { Suspense } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import Skeleton from "./Skeleton";
+import { Emailjs } from "./Emailjs";
 
 const Product = ({ product }) => {
   return (
@@ -11,6 +12,7 @@ const Product = ({ product }) => {
         <div className="mx-auto">
           <div className="carousel carousel-center max-w-md p-4 space-x-4 bg-neutral rounded-box">
             <div className="carousel-item min-w-[100px]">
+
               <Suspense fallback={<Skeleton />}>
                 <LazyLoadImage
                   alt="img"
@@ -47,7 +49,7 @@ const Product = ({ product }) => {
           </div>
           <div className="text-center">
             {product.link && (
-              <Link className="btn btn-active btn-accent my-3" href={product.link}>
+              <Link className="btn btn-active btn-accent my-3" target="_blanck" href={product.link}>
                 Bargain
               </Link>
             )}
