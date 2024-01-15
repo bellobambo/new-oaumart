@@ -97,5 +97,17 @@
         "desc": "",
         "link": "https://wa.link/h5ydaq",
         "item": "edibles"
+      },
+    {
+        "id": 9,
+        "name": "JJ Choco hub",
+        "price": "150/1,₦3200/pack ",
+        "image": "/jj.jpeg",
+        "image2": "/jj2.jpeg",
+        "date": "JAN 15 2024",
+        "quantity": 20,
+        "desc": "",
+        "link": "https://wa.link/odjp1m",
+        "item": "edibles"
       }
 ]
