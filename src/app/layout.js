@@ -2,13 +2,14 @@
 
 import './globals.css'
 import Navbar from "../../components/Navbar";
-// import Providers from "../../components/Providers";
+
 import NextTopLoader from 'nextjs-toploader';
 import News from "../../components/News";
 import Footer from "../../components/Footer";
 import Toast from "../../components/Toast";
 import { Suspense } from 'react';
 import Loading from '../../components/Loading';
+import { NextAuthProvider } from './Providers';
 
 export const metadata = {
   title: 'OAUmart',
@@ -22,18 +23,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="aqua">
       <body>
-        <Toast />
-        <Navbar />
-        <News />
-        <NextTopLoader
-          color='#FFFF99'
+        <NextAuthProvider>
 
-        />
-        <Suspense fallback={<Loading />}>
-          {children}
-
-        </Suspense>
-        <Footer />
+          <Toast />
+          <Navbar />
+          <News />
+          <NextTopLoader color='#FFFF99'/>
+          <Suspense fallback={<Loading />}>
+            {children}
+          </Suspense>
+          <Footer />
+        </NextAuthProvider>
 
       </body>
     </html>

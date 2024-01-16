@@ -1,7 +1,14 @@
+'use client'
+
 import Link from 'next/link'
+import { signOut, useSession } from "next-auth/react";
 import React from 'react'
+import { signIn } from 'next-auth/react'
 
 export default function page() {
+
+    const { status } = useSession();
+
     return (
 
 
@@ -28,8 +35,9 @@ export default function page() {
                         <p> Free</p>
                         <p> Upload Your Product on OAUmart for the span of a week</p>
                         <div className="card-actions">
-                            <Link className="btn btn-active btn-accent my-3" href='https://wa.me/message/2EU7DKQNESR5K1' target="_blank">
-                                Select Offer </Link>
+                        {status === 'authenticated' ? <button className="btn btn-active btn-accent my-3" >
+                                Select Offer </button> : <button className="btn btn-active btn-accent my-3" onClick={() => signIn('google')}>
+                                Sign In  </button>}
                         </div>
                     </div>
                 </div>
@@ -42,8 +50,10 @@ export default function page() {
                         <p> ₦1,500</p>
                         <p> Upload Your Product on OAUmart for the span of a month</p>
                         <div className="card-actions">
-                            <Link className="btn btn-active btn-accent my-3" href='https://wa.me/message/2EU7DKQNESR5K1' target="_blank">
-                                Select Offer </Link>
+                               {status === 'authenticated' ? <button className="btn btn-active btn-accent my-3" >
+                                Select Offer </button> : <button className="btn btn-active btn-accent my-3" onClick={() => signIn('google')}>
+                                Sign In  </button>}
+
                         </div>
                     </div>
                 </div>
@@ -56,8 +66,10 @@ export default function page() {
                         <p> ₦6,000</p>
                         <p> Upload Your Product on OAUmart for the span of a year</p>
                         <div className="card-actions">
-                            <Link className="btn btn-active btn-accent my-3" href='https://wa.me/message/2EU7DKQNESR5K1' target="_blank">
-                                Select Offer </Link>
+                               {status === 'authenticated' ? <button className="btn btn-active btn-accent my-3" >
+                                Select Offer </button> : <button className="btn btn-active btn-accent my-3" onClick={() => signIn('google')}>
+                                Sign In  </button>}
+
                         </div>
                     </div>
                 </div>
@@ -70,8 +82,13 @@ export default function page() {
                         <p>₦23,000</p>
                         <p> Upload Your Product on OAUmart </p>
                         <div className="card-actions">
-                            <Link className="btn btn-active btn-accent my-3" href='https://wa.me/message/2EU7DKQNESR5K1' target="_blank">
-                                Select Offer </Link>
+
+                            {status === 'authenticated' ? <button className="btn btn-active btn-accent my-3" >
+                                Select Offer </button> : <button className="btn btn-active btn-accent my-3" onClick={() => signIn('google')}>
+                                Sign In  </button>}
+
+
+
                         </div>
                     </div>
                 </div>
