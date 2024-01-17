@@ -109,5 +109,17 @@
         "desc": "",
         "link": "https://wa.link/odjp1m",
         "item": "edibles"
+    },
+    {
+        "id": 10,
+        "name": "Kishi's Kilishi",
+        "price": "1300 per pack",
+        "image": "/kishi.jpeg",
+        "image2": "/kishi2.jpeg",
+        "date": "JAN 18 2024",
+        "quantity": 21,
+        "desc": "",
+        "link": "https://wa.link/0b86rh",
+        "item": "edibles"
       }
 ]
