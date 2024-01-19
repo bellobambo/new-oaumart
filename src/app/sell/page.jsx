@@ -35,9 +35,8 @@ export default function page() {
                         <p> Free</p>
                         <p> Upload Your Product on OAUmart for the span of a week</p>
                         <div className="card-actions">
-                        {status === 'authenticated' ? <button className="btn btn-active btn-accent my-3" >
-                                Select Offer </button> : <button className="btn btn-active btn-accent my-3" onClick={() => signIn('google')}>
-                                Sign In  </button>}
+                            <Link href='https://wa.link/0xzlj7' className="btn btn-active btn-accent my-3" >
+                                Select Offer </Link>
                         </div>
                     </div>
                 </div>
@@ -50,7 +49,7 @@ export default function page() {
                         <p> ₦1,500</p>
                         <p> Upload Your Product on OAUmart for the span of a month</p>
                         <div className="card-actions">
-                               {status === 'authenticated' ? <button className="btn btn-active btn-accent my-3" >
+                            {status === 'authenticated' ? <button className="btn btn-active btn-accent my-3" >
                                 Select Offer </button> : <button className="btn btn-active btn-accent my-3" onClick={() => signIn('google')}>
                                 Sign In  </button>}
 
@@ -66,7 +65,7 @@ export default function page() {
                         <p> ₦6,000</p>
                         <p> Upload Your Product on OAUmart for the span of a year</p>
                         <div className="card-actions">
-                               {status === 'authenticated' ? <button className="btn btn-active btn-accent my-3" >
+                            {status === 'authenticated' ? <button className="btn btn-active btn-accent my-3" >
                                 Select Offer </button> : <button className="btn btn-active btn-accent my-3" onClick={() => signIn('google')}>
                                 Sign In  </button>}
 
