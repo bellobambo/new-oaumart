@@ -30,7 +30,7 @@ const handler = NextAuth({
           const userExist = await User.findOne({ email });
 
           if (!userExist) {
-            const res = await fetch('http://localhost:3000/api/user', {
+            const res = await fetch('https://oaumart.com/api/user', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
