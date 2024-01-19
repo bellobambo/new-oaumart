@@ -1,7 +1,7 @@
 
 FROM node:20.9.0
 
-ENV NODE_ENV development
+ENV NODE_ENV production
 
 
 WORKDIR /app

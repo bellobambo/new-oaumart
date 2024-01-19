@@ -14,7 +14,7 @@ const handler = NextAuth({
       },
     }),
   ],
-  secret: process.env.SECRET,
+  secret: process.env.SECRET ,
 
   callbacks: {
     async signIn({ user, account }) {
@@ -30,7 +30,7 @@ const handler = NextAuth({
           const userExist = await User.findOne({ email });
 
           if (!userExist) {
-            const res = await fetch('https://www.oaumart.com/api/user', {
+            const res = await fetch('http://localhost:3000/api/user', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
