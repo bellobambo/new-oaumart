@@ -10,11 +10,10 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
-    "@stripe/stripe-js": "^2.1.7",
     "axios": "^1.5.1",
     "emailjs": "^4.0.3",
     "lottie-react": "^2.4.0",
-    "mongoose": "^8.0.0",
+    "mongoose": "^8.0.4",
     "next": "^14.0.2",
     "next-auth": "^4.24.5",
     "nextjs-toploader": "^1.6.4",
@@ -24,9 +23,7 @@
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.11.0",
     "react-lazy-load-image-component": "^1.6.0",
-    "react-spinners": "^0.13.8",
-    "recoil": "^0.7.7",
-    "stripe": "^13.9.0"
+    "react-spinners": "^0.13.8"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",

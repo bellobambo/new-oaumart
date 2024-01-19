@@ -90,7 +90,7 @@ export default function Home() {
           <Emailjs setShowModal={setShowModal} />
 
         </div>
-      )}
+      )} 
       <section className="m-5">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
 

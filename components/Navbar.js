@@ -1,11 +1,13 @@
 'use client'
 
-
+import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
 import { FiShoppingCart } from "react-icons/fi";
 import { PiStorefrontDuotone } from "react-icons/pi";
 import SignUp from "./SignUp";
+import Image from 'next/image'
+import { CgLogOut } from "react-icons/cg";
 
 
 
@@ -53,33 +55,38 @@ const Navbar = () => {
 
   ];
 
+  const { status, data: session } = useSession();
+
   return (
-    <section className="shadow-xl border-2 border-slate-800 sticky top-0 z-10 flex">
-      <div className="container mx-auto py-2 text-[24px] flex justify-between items-center rounded-md">
+    <section className="shadow-xl border-2 border-slate-800 sticky top-0 z-10 flex w-full">
 
 
-        <div className="navbar bg-base-100">
-          <div className="flex-1">
-            <div className="cursor-pointer flex items-center">
-              <PiStorefrontDuotone />
-              <Link href="/">OAUmart</Link>
-            </div>
+
+      <div className="navbar bg-base-100">
+        <div className="flex-1">
+          <div className="cursor-pointer flex items-center">
+            <PiStorefrontDuotone />
+            <Link href="/">OAUmart</Link>
           </div>
+        </div>
 
+        {status === 'authenticated' && <Image alt='img' className="rounded-full" width={30} height={30} src={session?.user.image} />}
+        {status === 'authenticated' && <p className="text-[20px] font-light mx-2">{session?.user.name}</p>}
+        <div className="flex">
+          <Link className="btn btn-active btn-accent " href='/sell' >
+            Sell
+          </Link>
+          <div className="dropdown dropdown-end">
+            <div tabIndex={0} role="button" className="btn m-1">Quick Action</div>
+            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+              <li><Link href="/bedspace" className="flex"> <span>😴</span>  <span>BedSpace</span> </Link></li>
+              <li><Link href='/about' >&#8505; About us</Link></li>
+              <li><Link href="mailto:oaumart@gmail.com">&#9993; Contact</Link></li>
+              <li>
+                {status === 'authenticated' && <button className="bg-red-500 hover:text-black " onClick={() => signOut()}> <CgLogOut width={25} /> SignOut</button>}
 
-          <div className="flex">
-            <Link className="btn btn-active btn-accent " href='/sell' >
-              Sell
-            </Link>
-            <div className="dropdown dropdown-end">
-              <div tabIndex={0} role="button" className="btn m-1">Quick Action</div>
-              <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                <li><Link href="/bedspace" className="flex"> <span>😴</span>  <span>BedSpace</span> </Link></li>
-                <li><Link href='/about' >&#8505; About us</Link></li>
-                <li><Link href="mailto:oaumart@gmail.com">&#9993; Contact</Link></li>
-
-              </ul>
-            </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -87,28 +94,6 @@ const Navbar = () => {
 
 
 
-      {/* Sidebar */}
-      {isSidebarOpen && (
-        <div
-          ref={sidebarRef}
-          className={`bg-gray-200 w-64 h-screen max-h-[150px] fixed top-0 right-0 transform transition-transform duration-300 ease-in-out z-50 ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'
-            }`}
-        >
-
-          <div className=" p-3 ">
-            <div className="flex items-center mb-2">
-              <PiStorefrontDuotone />
-              <h2 className="font-bold text-lg">OAU Market²</h2>
-            </div>
-
-            <Link href="/contact" className="hover:scale-105 mb-2">About</Link>
-            <br />
-            <Link href="mailto:oaumart@gmail.com" className="hover:scale-[105px]">Contact</Link>
-
-          </div>
-
-        </div>
-      )}
     </section>
   );
 };
