@@ -14,48 +14,13 @@ import { CgLogOut } from "react-icons/cg";
 
 const Navbar = () => {
 
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const sidebarRef = useRef(null);
-
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
-
-  const closeSidebar = () => {
-    setIsSidebarOpen(false);
-  };
-
-  // Add event listener to close the sidebar when clicking outside of it
-  useEffect(() => {
-    const handleOutsideClick = (event) => {
-      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
-        closeSidebar();
-      }
-    };
-
-    if (isSidebarOpen) {
-      document.addEventListener("mousedown", handleOutsideClick);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-    };
-  }, [isSidebarOpen]);
-
-
-  const menuItems = [
-    // {
-    //   href: '/',
-    //   title: 'Homepage',
-    // },
-    {
-      href: '/about',
-      title: 'About',
-    },
-
-  ];
-
+ 
+ 
   const { status, data: session } = useSession();
+
+  useEffect(() => {
+    console.log("Session Data:", session); // Corrected from 'data' to 'session'
+  }, [session]);
 
   return (
     <section className="shadow-xl border-2 border-slate-800 sticky top-0 z-10 flex w-full">
@@ -70,8 +35,9 @@ const Navbar = () => {
           </div>
         </div>
 
-        {status === 'authenticated' && <Image alt='img' className="rounded-full" width={30} height={30} src={session?.user.image} />}
-        {status === 'authenticated' && <p className="text-[20px] font-light mx-2">{session?.user.name}</p>}
+        {status === 'authenticated' && <Image alt='img' className="rounded-full" width={30} height={30} src={session?.user.image} /> }
+        {status === 'authenticated' && <p className="text-[20px] font-light mx-2">{session?.user.name.split(' ')[0]}</p>}
+
         <div className="flex">
           <Link className="btn btn-active btn-accent " href='/sell' >
             Sell

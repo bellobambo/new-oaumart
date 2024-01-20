@@ -13,6 +13,7 @@ const Toast = () => {
         color: '#000', 
       },
       duration: 3000,
+      position: 'top-left',
     });
   }, []);
 

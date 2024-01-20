@@ -6,7 +6,6 @@ import Navbar from "../../components/Navbar";
 import NextTopLoader from 'nextjs-toploader';
 import News from "../../components/News";
 import Footer from "../../components/Footer";
-import Toast from "../../components/Toast";
 import { Suspense } from 'react';
 import Loading from '../../components/Loading';
 import { NextAuthProvider } from './Providers';
@@ -25,7 +24,6 @@ export default function RootLayout({ children }) {
       <body>
         <NextAuthProvider>
 
-          <Toast />
           <Navbar />
           <News />
           <NextTopLoader color='#FFFF99'/>

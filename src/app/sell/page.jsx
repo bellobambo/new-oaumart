@@ -2,12 +2,23 @@
 
 import Link from 'next/link'
 import { signOut, useSession } from "next-auth/react";
-import React from 'react'
+import React, { useState } from 'react'
 import { signIn } from 'next-auth/react'
 
 export default function page() {
 
     const { status } = useSession();
+
+    const [isSignInButtonDisabled, setIsSignInButtonDisabled] = useState(false);
+
+    const handleSignIn = async () => {
+
+        setIsSignInButtonDisabled(true);
+
+        await signIn('google');
+
+        setIsSignInButtonDisabled(false);
+    };
 
     return (
 
@@ -49,9 +60,19 @@ export default function page() {
                         <p> ₦1,500</p>
                         <p> Upload Your Product on OAUmart for the span of a month</p>
                         <div className="card-actions">
-                            {status === 'authenticated' ? <button className="btn btn-active btn-accent my-3" >
-                                Select Offer </button> : <button className="btn btn-active btn-accent my-3" onClick={() => signIn('google')}>
-                                Sign In  </button>}
+                            {status === 'authenticated' ? (
+                                <button className="btn btn-active btn-accent my-3" disabled>
+                                    Select Offer
+                                </button>
+                            ) : (
+                                <button
+                                    className="btn btn-active btn-accent my-3"
+                                    onClick={handleSignIn}
+                                    disabled={isSignInButtonDisabled}
+                                >
+                                    {isSignInButtonDisabled ? 'Signing In...' : 'Sign In'}
+                                </button>
+                            )}
 
                         </div>
                     </div>
@@ -65,9 +86,19 @@ export default function page() {
                         <p> ₦6,000</p>
                         <p> Upload Your Product on OAUmart for the span of a year</p>
                         <div className="card-actions">
-                            {status === 'authenticated' ? <button className="btn btn-active btn-accent my-3" >
-                                Select Offer </button> : <button className="btn btn-active btn-accent my-3" onClick={() => signIn('google')}>
-                                Sign In  </button>}
+                            {status === 'authenticated' ? (
+                                <button className="btn btn-active btn-accent my-3" disabled>
+                                    Select Offer
+                                </button>
+                            ) : (
+                                <button
+                                    className="btn btn-active btn-accent my-3"
+                                    onClick={handleSignIn}
+                                    disabled={isSignInButtonDisabled}
+                                >
+                                    {isSignInButtonDisabled ? 'Signing In...' : 'Sign In'}
+                                </button>
+                            )}
 
                         </div>
                     </div>
@@ -82,9 +113,19 @@ export default function page() {
                         <p> Upload Your Product on OAUmart </p>
                         <div className="card-actions">
 
-                            {status === 'authenticated' ? <button className="btn btn-active btn-accent my-3" >
-                                Select Offer </button> : <button className="btn btn-active btn-accent my-3" onClick={() => signIn('google')}>
-                                Sign In  </button>}
+                            {status === 'authenticated' ? (
+                                <button className="btn btn-active btn-accent my-3" disabled>
+                                    Select Offer
+                                </button>
+                            ) : (
+                                <button
+                                    className="btn btn-active btn-accent my-3"
+                                    onClick={handleSignIn}
+                                    disabled={isSignInButtonDisabled}
+                                >
+                                    {isSignInButtonDisabled ? 'Signing In...' : 'Sign In'}
+                                </button>
+                            )}
 
 
 

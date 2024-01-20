@@ -5,6 +5,7 @@ import data from '/data.json';
 import Product from '../../components/Product';
 import { Suspense, useEffect, useState } from 'react';
 import { Emailjs } from '../../components/Emailjs';
+import Toast from '../../components/Toast';
 
 
 export default function Home() {
@@ -55,6 +56,8 @@ export default function Home() {
   return (
     <div>
       <div className="flex flex-col items-center text-center m-5">
+      <Toast />
+
         <h1 className="">Our Products</h1>
         <br />
         <input
