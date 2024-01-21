@@ -3,11 +3,112 @@
 import Link from 'next/link'
 import { signOut, useSession } from "next-auth/react";
 import React, { useState } from 'react'
+import { useRouter } from 'next/navigation';
 import { signIn } from 'next-auth/react'
+import { PaystackButton } from 'react-paystack'
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function page() {
 
-    const { status } = useSession();
+    const alert = () => {
+        toast('Subscription Successful✓.', {
+            style: {
+                background: '#bee0ff',
+                color: '#000',
+            },
+            duration: 3000,
+            position: 'top-right',
+        });
+    }
+
+    const router = useRouter()
+
+    const { status, data: session } = useSession();
+
+    const publicKey = 'pk_test_6b3fd973a0a596ad9e6d951d1fa0bb437276f457';
+
+    const amount = 150000
+
+    const email = session?.user?.email || 'bello@gmail.com';
+    const name = session?.user?.name || 'bambo';
+
+
+    const month = {
+        email,
+        amount,
+        metadata: {
+            name,
+        },
+        publicKey,
+        text: "Select",
+        onSuccess: () => {
+            alert();
+            setTimeout(() => {
+                router.push('/additem');
+            }, 3500);
+        },
+        onClose: () => alert("Wait! Don't leave :("),
+    }
+    const year = {
+
+        email,
+
+        amount: 600000,
+
+        metadata: {
+
+            name,
+
+
+        },
+
+        publicKey,
+
+        text: "Select",
+
+        onSuccess: () => {
+            alert();
+            setTimeout(() => {
+                router.push('/additem');
+            }, 3500);
+        },
+
+
+
+        onClose: () => alert("Wait! Don't leave :("),
+
+    }
+    const life = {
+
+        email,
+
+        amount: 2300000,
+
+        metadata: {
+
+            name,
+
+
+        },
+
+        publicKey,
+
+        text: "Select",
+
+        onSuccess: () => {
+            alert();
+            setTimeout(() => {
+                router.push('/additem');
+            }, 3500);
+        },
+
+
+
+        onClose: () => alert("Wait! Don't leave :("),
+
+    }
+
+
 
     const [isSignInButtonDisabled, setIsSignInButtonDisabled] = useState(false);
 
@@ -19,6 +120,8 @@ export default function page() {
 
         setIsSignInButtonDisabled(false);
     };
+
+
 
     return (
 
@@ -46,8 +149,8 @@ export default function page() {
                         <p> Free</p>
                         <p> Upload Your Product on OAUmart for the span of a week</p>
                         <div className="card-actions">
-                            <Link href='https://wa.link/0xzlj7' className="btn btn-active btn-accent my-3" >
-                                Select Offer </Link>
+                        <Link className='btn btn-accent' href='https://wa.me/message/2EU7DKQNESR5K1' target="_blank">Select </Link>
+
                         </div>
                     </div>
                 </div>
@@ -61,9 +164,7 @@ export default function page() {
                         <p> Upload Your Product on OAUmart for the span of a month</p>
                         <div className="card-actions">
                             {status === 'authenticated' ? (
-                                <button className="btn btn-active btn-accent my-3" disabled>
-                                    Select Offer
-                                </button>
+                                <PaystackButton className="btn btn-active btn-accent my-3" {...month} />
                             ) : (
                                 <button
                                     className="btn btn-active btn-accent my-3"
@@ -87,9 +188,7 @@ export default function page() {
                         <p> Upload Your Product on OAUmart for the span of a year</p>
                         <div className="card-actions">
                             {status === 'authenticated' ? (
-                                <button className="btn btn-active btn-accent my-3" disabled>
-                                    Select Offer
-                                </button>
+                                <PaystackButton className="btn btn-active btn-accent my-3" {...year} />
                             ) : (
                                 <button
                                     className="btn btn-active btn-accent my-3"
@@ -114,9 +213,8 @@ export default function page() {
                         <div className="card-actions">
 
                             {status === 'authenticated' ? (
-                                <button className="btn btn-active btn-accent my-3" disabled>
-                                    Select Offer
-                                </button>
+                                <PaystackButton className="btn btn-active btn-accent my-3" {...life} />
+
                             ) : (
                                 <button
                                     className="btn btn-active btn-accent my-3"
