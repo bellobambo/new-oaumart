@@ -121,5 +121,17 @@
         "desc": "",
         "link": "https://wa.link/0b86rh",
         "item": "edibles"
+      },
+    {
+        "id": 11,
+        "name": "Hooks and Gems",
+        "price": "3500 / ₦4800  ",
+        "image": "/hooks.jpeg",
+        "image2": "/hooks3.jpeg",
+        "date": "JAN 21 2024",
+        "quantity": 21,
+        "desc": "",
+        "link": "https://wa.link/1xeeya",
+        "item": "non-edibles"
       }
 ]
