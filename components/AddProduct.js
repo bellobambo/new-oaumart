@@ -8,7 +8,7 @@ import Wait from '../components/wait.json'
 
 const AddProduct = () => {
     return (
-        <div className="flex items-center justify-center h-screen">
+        <div className="flex items-center justify-center h-screen mb-[20px]">
             <div className="text-center">
                 <div className='w-[300px] h-[300px]'>
                     <Lottie animationData={Wait} />
