@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { signOut, useSession } from "next-auth/react";
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation';
 import { signIn } from 'next-auth/react'
 import { PaystackButton } from 'react-paystack'
@@ -10,16 +10,7 @@ import toast, { Toaster } from 'react-hot-toast';
 
 export default function page() {
 
-    const alert = () => {
-        toast('Subscription Successful✓.', {
-            style: {
-                background: '#bee0ff',
-                color: '#000',
-            },
-            duration: 3000,
-            position: 'top-right',
-        });
-    }
+
 
     const router = useRouter()
 
@@ -42,10 +33,20 @@ export default function page() {
         publicKey,
         text: "Select",
         onSuccess: () => {
-            alert();
+            useEffect(() => {
+                toast('Subscription Successful✓.', {
+                    style: {
+                        background: '#bee0ff',
+                        color: '#000',
+                    },
+                    
+                    position: 'top-right',
+                });
+            })
+
             setTimeout(() => {
                 router.push('/additem');
-            }, 3500);
+            }, 2000);
         },
         onClose: () => alert("Wait! Don't leave :("),
     }
@@ -67,10 +68,20 @@ export default function page() {
         text: "Select",
 
         onSuccess: () => {
-            alert();
+            useEffect(() => {
+                toast('Subscription Successful✓.', {
+                    style: {
+                        background: '#bee0ff',
+                        color: '#000',
+                    },
+                    
+                    position: 'top-right',
+                });
+            })
+
             setTimeout(() => {
                 router.push('/additem');
-            }, 3500);
+            }, 2000);
         },
 
 
@@ -96,10 +107,20 @@ export default function page() {
         text: "Select",
 
         onSuccess: () => {
-            alert();
+            useEffect(() => {
+                toast('Subscription Successful✓.', {
+                    style: {
+                        background: '#bee0ff',
+                        color: '#000',
+                    },
+                    
+                    position: 'top-right',
+                });
+            })
+
             setTimeout(() => {
                 router.push('/additem');
-            }, 3500);
+            }, 2000);
         },
 
 
@@ -149,7 +170,7 @@ export default function page() {
                         <p> Free</p>
                         <p> Upload Your Product on OAUmart for the span of a week</p>
                         <div className="card-actions">
-                        <Link className='btn btn-accent' href='https://wa.me/message/2EU7DKQNESR5K1' target="_blank">Select </Link>
+                            <Link className='btn btn-accent' href='https://wa.me/message/2EU7DKQNESR5K1' target="_blank">Select </Link>
 
                         </div>
                     </div>
