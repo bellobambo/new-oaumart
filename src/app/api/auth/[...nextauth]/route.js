@@ -3,56 +3,52 @@ import GoogleProvider from 'next-auth/providers/google';
 import { connectMongodb } from '../../../../../lib/mongodb';
 import User from '../../../../../models/users';
 
-
 const handler = NextAuth({
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      httpOptions: {
-        timeout: 40000,
-      },
+
+      // httpOptions: {
+      //   timeout: 40000,
+      // },
     }),
   ],
   secret: process.env.SECRET,
 
   callbacks: {
-    async signIn({ user, account }) {
-      console.log('User', user);
-      console.log('Account', account);
+    async session({ session }) {
 
-      if (account.provider === 'google') {
-        const { name, email } = user;
-        try {
+      const sessionUser = await User.findOne({email : session.user.email});
 
-          await connectMongodb()
+      session.user.id = sessionUser._id;
+      return session
+    },
+    async signIn({ profile }) {
+      // console.log(profile)
 
-          const userExist = await User.findOne({ email });
+      try {
+        await connectMongodb()
 
-          if (!userExist) {
-            const res = await fetch('https://oaumart.com/api/user', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify({
-                name, email
-              })
-            });
-            if (res.ok) {
-              return user;
-            }
-          }
+        const userExist = await User.findOne({ email: profile.email })
 
-        } catch (error) {
-          console.log(error);
+        if (!userExist) {
+          const user = await User.create({
+            email: profile.email,
+            name: profile.name,
+            image: profile.picture,
+          })
         }
+
+        return true
+
+      } catch (error) {
+        console.log(error)
+        return false
       }
 
-      return user;
     }
-  }
-
+  },
 });
 
 export { handler as GET, handler as POST };

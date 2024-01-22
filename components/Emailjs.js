@@ -20,7 +20,7 @@ export const Emailjs = ({setShowModal}) => {
 
         try {
             const result = await emailjs.sendForm('service_7c1wrpi', 'template_s0jiftp', form.current, '-7jPGBadb99B_dGco');
-            console.log(result.text);
+            // console.log(result.text);
             form.current.reset();
             setIsModalOpen(true);
 

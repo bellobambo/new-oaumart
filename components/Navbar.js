@@ -19,7 +19,7 @@ const Navbar = () => {
   const { status, data: session } = useSession();
 
   useEffect(() => {
-    console.log("Session Data:", session); // Corrected from 'data' to 'session'
+    // console.log("Session Data:", session); // Corrected from 'data' to 'session'
   }, [session]);
 
   return (

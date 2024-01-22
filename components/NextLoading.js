@@ -2,7 +2,7 @@ import React from 'react';
 import NextTopLoader from 'nextjs-toploader';
 
 const NextLoading = () => {
-  console.log('NextLoading component is rendering...');
+  // console.log('NextLoading component is rendering...');
 
   return (
     <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center">

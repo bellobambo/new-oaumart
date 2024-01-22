@@ -6,6 +6,7 @@ import Product from '../../components/Product';
 import { Suspense, useEffect, useState } from 'react';
 import { Emailjs } from '../../components/Emailjs';
 import Toast from '../../components/Toast';
+// import { connectMongodb } from '../../lib/mongodb';
 
 
 export default function Home() {
@@ -52,6 +53,8 @@ export default function Home() {
   const startIndex = (currentPage - 1) * productsPerPage;
   const endIndex = startIndex + productsPerPage;
   const productsToDisplay = filteredProducts.slice(startIndex, endIndex);
+
+//  const db =  connectMongodb()
 
   return (
     <div>
