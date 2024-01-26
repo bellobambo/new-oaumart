@@ -12,6 +12,7 @@
     "@emailjs/browser": "^3.11.0",
     "axios": "^1.5.1",
     "emailjs": "^4.0.3",
+    "formidable": "^3.5.1",
     "lottie-react": "^2.4.0",
     "mongodb": "^6.3.0",
     "mongoose": "^8.1.0",

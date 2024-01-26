@@ -5,10 +5,38 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 import Skeleton from "./Skeleton";
 import { Emailjs } from "./Emailjs";
 
-const Product = ({ product }) => {
+
+const getItems = async () => {
+  try {
+    const res = await fetch('http://localhost:3000/api/items', {
+      cache: "no-store",
+    });
+
+    if (!res.ok) {
+      throw new Error('failed to fetch items');
+    }
+
+    return res.json();
+  } catch (error) {
+    console.log("Error Loading Items", error);
+  }
+}
+
+
+const Product = async ({ product }) => {
+
+  const { items } = await getItems()
+
   return (
     <>
       <div className="flex justify-center mb-20">
+      <div className="flex justify-center mb-20">
+          {items.map((t) => (
+            <div key={t._id}>
+              {t.itemName}
+            </div>
+          ))}
+        </div>
         <div className="mx-auto">
           <div className="carousel carousel-center max-w-md p-4 space-x-4 bg-neutral rounded-box">
             <div className="carousel-item min-w-[100px]">
