@@ -85,7 +85,7 @@ export default function Home() {
         </details>
       </div>
 
-      {showModal && (
+      {/* {showModal && (
         <div className="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-75 flex items-center justify-center z-50">
           <button
             onClick={() => setShowModal(false)}
@@ -96,7 +96,7 @@ export default function Home() {
           <Emailjs setShowModal={setShowModal} />
 
         </div>
-      )} 
+      )}  */}
       <section className="m-5">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
 
