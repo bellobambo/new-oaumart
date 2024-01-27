@@ -13,13 +13,14 @@ const AddProduct = () => {
         const [itemDesc, setItemDesc] = useState("");
         const [phone, setPhone] = useState("");
         const [itemPrice, setItemPrice] = useState("");
+        const [image, setImage] = useState("");
       
         const router = useRouter();
       
         const handleSubmit = async (e) => {
           e.preventDefault();
       
-          if (!itemName || !phone || !itemPrice ) {
+          if (!itemName || !phone || !itemPrice || !image ) {
             alert("Item Name, Phone Number and Item Price are required.");
             return;
           }
@@ -30,7 +31,7 @@ const AddProduct = () => {
               headers: {
                 "Content-type": "application/json",
               },
-              body: JSON.stringify({ itemName, phone, itemPrice, itemDesc }),
+              body: JSON.stringify({ itemName, phone, itemPrice, itemDesc, image }),
             });
       
             console.log(res);
@@ -43,11 +44,11 @@ const AddProduct = () => {
             }
           } catch (error) {
             console.log(error);
-          }
+          } a
         };
     return (
         <div className="flex flex-col items-center justify-center h-screen mt-[-200px]">
-            <form onSubmit={handleSubmit} className=' text-black p-10 '>
+            <form   onSubmit={handleSubmit} className=' text-black p-10 '>
                 <div className='bg-white border-2 border-gray-400 p-10 flex flex-col '>
                     <h1 className='text-center'>Add Product </h1>
                     <label>Product Name:</label>
@@ -69,6 +70,12 @@ const AddProduct = () => {
                         onChange={(e) => setPhone(e.target.value)}
                         value={phone}
                     className='bg-white border-2 border-gray-400' type="text" />
+
+                    <label>Item Image:</label>
+                    <input 
+                        onChange={(e) => setImage(e.target.value)}
+                        value={image}
+                    className='bg-white border-2 border-gray-400' type="file" />
 
 
                     <button type='submit' >Add</button>

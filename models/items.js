@@ -17,6 +17,10 @@ const addItemSchema = new Schema(
             type: Number,
             required: [true, 'Phone Number is Required'],
         },
+        image: {
+            type: String,
+            required: [true, 'Image is Required'],
+        },
     },
     {
         timestamps: true,
