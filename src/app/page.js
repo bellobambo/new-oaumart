@@ -100,9 +100,9 @@ export default function Home() {
       <section className="m-5">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
 
-          {productsToDisplay.map((product) => (
-            <Product key={product.id} product={product} />
-          ))}
+          {/* {productsToDisplay.map((product) => ( */}
+            <Product  />
+          {/* ))} */}
         </div>
       </section>
 

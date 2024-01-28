@@ -31,7 +31,7 @@ const AddProduct = () => {
         formData.append('itemPrice', itemPrice);
         formData.append('image', image);
   
-        const res = await fetch('http://localhost:3000/api/items', {
+        const res = await fetch('http://localhost:3001/api/items', {
           method: 'POST',
           body: formData,
         });
