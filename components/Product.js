@@ -10,7 +10,7 @@ const Product = ({ product }) => {
     <>
       <div className="flex justify-center mb-20">
         <div className="mx-auto">
-          <div className="carousel carousel-center max-w-md p-4 space-x-4 bg-neutral rounded-box">
+          <div className="carousel carousel-center max-w-md p-8 space-x-4 bg-neutral rounded-box">
             <div className="carousel-item min-w-[100px]">
 
               <Suspense fallback={<Skeleton />}>
@@ -19,7 +19,7 @@ const Product = ({ product }) => {
                   placeholderSrc={product.image}
                   effect="blur"
                   src={product.image}
-                  className="max-w-[150px] h-56"
+                  className="max-w-[150px] h-56 hover:scale-125 transition-transform ease-in-out duration-300"
                 />
               </Suspense>
             </div>
@@ -30,7 +30,7 @@ const Product = ({ product }) => {
                   placeholderSrc={product.image}
                   effect="blur"
                   src={product.image2}
-                  className="h-56 max-w-[200px]"
+                  className="h-56 max-w-[200px] hover:scale-125 transition-transform ease-in-out duration-300"
                 />
               </Suspense>
             </div>

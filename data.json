@@ -133,5 +133,29 @@
         "desc": "",
         "link": "https://wa.link/1xeeya",
         "item": "non-edibles"
+      },
+    {
+        "id": 12,
+        "name": "Beauty By Wura",
+        "price": " Negotiable",
+        "image": "/val.jpg",
+        "image2": "/val.jpg",
+        "date": "JAN 31 2024",
+        "quantity": 21,
+        "desc": "",
+        "link": "https://wa.me/9033901848",
+        "item": "non-edibles"
+      },
+    {
+        "id": 13,
+        "name": "Desire Prints",
+        "price": " Negotiable",
+        "image": "/6ix.jpg",
+        "image2": "/6ix2.jpg",
+        "date": "JAN 31 2024",
+        "quantity": 21,
+        "desc": "",
+        "link": "https://wa.me/8060408546",
+        "item": "non-edibles"
       }
 ]
