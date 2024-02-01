@@ -1,49 +1,45 @@
 import React from 'react'
+import Link from 'next/link'
 import Marquee from "react-fast-marquee";
 
 export default function News() {
     return (
-        <Marquee className='m-3' pauseOnHover={true}>
-            <div className="card w-96 bg-base-100 shadow-xl image-full m-3">
-                {/* <figure><img src="/images.png" alt="Shoes" /></figure> */}
-                <div className="card-body">
-                    <h2 className="card-title">ADS</h2>
-                    <p>Sell your Products</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary" disabled>Buy Now</button>
-                    </div>
-                </div>
+        <Marquee className='m-3 gap-6 flex' pauseOnHover={true}>
+        <Link href='https://wa.link/slzpr8' target="_blank"   className="card w-60 bg-base-100 shadow-xl image-full mr-20">
+            <figure><img src="/6ix1.jpg" alt="Shoes" /></figure>
+            <div className="card-body">
+                <h2 className="card-title">Desire Prints</h2>
             </div>
-            <div className="card w-96 bg-base-100 shadow-xl image-full m-3">
-                {/* <figure><img src="/images.png" alt="Shoes" /></figure> */}
-                <div className="card-body">
-                    <h2 className="card-title">ADS</h2>
-                    <p>Sell your Products</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary " disabled>Buy Now</button>
-                    </div>
-                </div>
+        </Link>
+    
+        <Link href='https://wa.link/slzpr8' target="_blank"   className="card w-60 bg-base-100 shadow-xl image-full mr-20">
+            <figure><img src="/6ix1.jpg" alt="Shoes" /></figure>
+            <div className="card-body">
+                <h2 className="card-title">Desire Prints</h2>
             </div>
-            <div className="card w-96 bg-base-100 shadow-xl image-full m-3">
-                {/* <figure><img src="/images.png" alt="Shoes" /></figure> */}
-                <div className="card-body">
-                    <h2 className="card-title">ADS</h2>
-                    <p>Sell your Products</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary " disabled>Buy Now</button>
-                    </div>
-                </div>
+        </Link>
+    
+        <Link href='https://wa.link/slzpr8'  target="_blank"  className="card w-60 bg-base-100 shadow-xl image-full mr-20">
+            <figure><img src="/6ix1.jpg" alt="Shoes" /></figure>
+            <div className="card-body">
+                <h2 className="card-title">Desire Prints</h2>
             </div>
-            <div className="card w-96 bg-base-100 shadow-xl image-full m-3">
-                {/* <figure><img src="/images.png" alt="Shoes" /></figure> */}
-                <div className="card-body">
-                    <h2 className="card-title">ADS</h2>
-                    <p>Sell your Products</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary " disabled>Buy Now</button>
-                    </div>
-                </div>
+        </Link>
+
+        <Link href='https://wa.link/slzpr8'target="_blank"   className="card w-60 bg-base-100 shadow-xl image-full mr-20">
+            <figure><img src="/6ix1.jpg" alt="Shoes" /></figure>
+            <div className="card-body">
+                <h2 className="card-title">Desire Prints</h2>
             </div>
-        </Marquee>
+        </Link>
+
+        <Link href='https://wa.link/slzpr8' target="_blank"   className="card w-60 bg-base-100 shadow-xl image-full mr-20">
+            <figure><img src="/6ix1.jpg" alt="Shoes" /></figure>
+            <div className="card-body">
+                <h2 className="card-title">Desire Prints</h2>
+            </div>
+        </Link>
+    </Marquee>
+    
     )
 }
