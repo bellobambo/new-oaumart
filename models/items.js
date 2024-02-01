@@ -6,6 +6,10 @@ const addItemSchema = new Schema(
             type: String,
             required: [true, 'Item Name is Required'],
         },
+        brandName: {
+            type: String,
+            required: [true, 'Item Name is Required'],
+        },
         itemPrice: {
             type: Number,
             required: [true, 'Item Name is Required'],

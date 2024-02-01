@@ -21,10 +21,10 @@ export async function POST(request) {
             buffer
         );
 
-        const { itemName, itemDesc, phone, itemPrice } = Object.fromEntries(formData.entries());
+        const { itemName, itemDesc, phone, itemPrice, brandName } = Object.fromEntries(formData.entries());
 
         await connectMongodb();
-        await AddItem.create({ itemName, itemDesc, phone, itemPrice, image: filename });
+        await AddItem.create({ itemName, itemDesc, phone, itemPrice, brandName, image: filename });
 
         return NextResponse.json({ message: 'Item Added' });
     } catch (error) {

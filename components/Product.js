@@ -49,32 +49,43 @@ const Product = () => {
     setPageNumber(newPage);
   };
 
+  const formattedDate = (timestamp) => {
+    const date = new Date(timestamp);
+    return date.toLocaleString(); // Adjust options as needed
+  };
+  
+
   const displayItems = filteredItems
-    .slice(pagesVisited, pagesVisited + itemsPerPage)
-    .map((t) => (
-      <div key={t._id} className="card w-96 bg-base-100 shadow-xl my-10">
-        <div className=" items-center border-2 border-yellow-400 rounded-md p-4">
-          <figure>
-            <LazyLoadImage
-              alt="img"
-              placeholderSrc={t.image}
-              effect="blur"
-              src={`/uploads/${t.image}`}
-              className="h-56 transform hover:scale-125 transition-transform duration-300 ease-in-out"
-            />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">{t.itemName}</h2>
-            <p>{t.itemDesc}</p>
-            <div className="card-actions justify-end">
-              <Link href={`https://wa.me/${t.phone}`} className='btn btn-accent' >
-                Bargain
-              </Link>
-            </div>
+  .slice()
+  .sort((a, b) => b.createdAt - a.createdAt) 
+  .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)) 
+  .slice(pagesVisited, pagesVisited + itemsPerPage)
+  .map((t) => (
+    <div key={t._id} className="card w-96 bg-base-100 shadow-xl my-10">
+      <div className=" items-center border-2 border-yellow-400 rounded-md p-4">
+        <figure>
+          <LazyLoadImage
+            alt="img"
+            placeholderSrc={t.image}
+            effect="blur"
+            src={`/uploads/${t.image}`}
+            className="h-56 transform hover:scale-125 transition-transform duration-300 ease-in-out"
+          />
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title">{t.itemName}</h2>
+          <p>{t.itemDesc}</p>
+          <small><strong>{formattedDate(t.createdAt)}</strong></small>
+          <div className="card-actions justify-end">
+            <Link href={`https://wa.me/${t.phone}`} className='btn btn-accent' >
+              Bargain
+            </Link>
           </div>
         </div>
       </div>
-    ));
+    </div>
+  ));
+
 
   return (
     <>
