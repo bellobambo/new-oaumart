@@ -7,7 +7,7 @@ import { Emailjs } from "./Emailjs";
 
 const getItems = async () => {
   try {
-    const res = await fetch('https://www.oaumart.com/api/items', {
+    const res = await fetch('http://localhost:3000/api/items', {
       cache: "no-store",
     });
 
@@ -60,7 +60,7 @@ const Product = () => {
               placeholderSrc={t.image}
               effect="blur"
               src={`/uploads/${t.image}`}
-              className="max-w-[150px] h-56"
+              className="h-56 transform hover:scale-125 transition-transform duration-300 ease-in-out"
             />
           </figure>
           <div className="card-body">
