@@ -33,20 +33,20 @@ export default function page() {
         publicKey,
         text: "Select",
         onSuccess: () => {
-            useEffect(() => {
-                toast('Subscription Successful✓.', {
-                    style: {
-                        background: '#bee0ff',
-                        color: '#000',
-                    },
-                    
-                    position: 'top-right',
-                });
-            })
 
-            setTimeout(() => {
-                router.push('/additem');
-            }, 2000);
+            toast('Subscription Successful✓.', {
+                style: {
+                    background: '#bee0ff',
+                    color: '#000',
+                },
+
+                position: 'top-right',
+            });
+
+
+
+            router.push('/additem');
+
         },
         onClose: () => alert("Wait! Don't leave :("),
     }
@@ -68,20 +68,20 @@ export default function page() {
         text: "Select",
 
         onSuccess: () => {
-            useEffect(() => {
-                toast('Subscription Successful✓.', {
-                    style: {
-                        background: '#bee0ff',
-                        color: '#000',
-                    },
-                    
-                    position: 'top-right',
-                });
-            })
 
-            setTimeout(() => {
-                router.push('/additem');
-            }, 2000);
+            toast('Subscription Successful✓.', {
+                style: {
+                    background: '#bee0ff',
+                    color: '#000',
+                },
+
+                position: 'top-right',
+            });
+
+
+
+            router.push('/additem');
+
         },
 
 
@@ -107,20 +107,20 @@ export default function page() {
         text: "Select",
 
         onSuccess: () => {
-            useEffect(() => {
-                toast('Subscription Successful✓.', {
-                    style: {
-                        background: '#bee0ff',
-                        color: '#000',
-                    },
-                    
-                    position: 'top-right',
-                });
-            })
 
-            setTimeout(() => {
-                router.push('/additem');
-            }, 2000);
+            toast('Subscription Successful✓.', {
+                style: {
+                    background: '#bee0ff',
+                    color: '#000',
+                },
+
+                position: 'top-right',
+            });
+
+
+
+            router.push('/additem');
+
         },
 
 
