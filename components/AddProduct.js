@@ -3,6 +3,7 @@
 
 import React from 'react';
 import Lottie from 'lottie-react';
+import Check from './Check.json'
 import { useRouter } from "next/navigation";
 import { useState } from 'react';
 import { useSession } from 'next-auth/react';
@@ -15,23 +16,25 @@ const AddProduct = () => {
   const [itemPrice, setItemPrice] = useState('');
   const [image, setImage] = useState(null);  // Use null as initial state for a File object
   const [loading, setLoading] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [productType, setProductType] = useState('');
 
   const router = useRouter();
 
-  // const { data, session } = useSession({
-  //   required: true
-  // })
+  const { data, session } = useSession({
+    required: true
+  })
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!itemName || !phone || !itemPrice || !image || !brandName) {
-      alert('Item Name, Phone Number, and Item Price are required.');
+    if (!itemName || !phone || !itemPrice || !image || !brandName ) {
+      alert('Please fill in all required fields, including Product Type.');
       return;
     }
 
     try {
-      setLoading(true); 
+      setLoading(true);
       const formData = new FormData();
       formData.append('itemName', itemName);
       formData.append('brandName', brandName);
@@ -39,8 +42,9 @@ const AddProduct = () => {
       formData.append('phone', phone);
       formData.append('itemPrice', itemPrice);
       formData.append('image', image);
+      // formData.append('productType', productType);
 
-      const res = await fetch('http://localhost:3000/api/items', {
+      const res = await fetch('https://www.oaumart.com/api/items', {
         method: 'POST',
         body: formData,
       });
@@ -49,6 +53,8 @@ const AddProduct = () => {
 
       if (res.ok) {
 
+        setIsModalOpen(true);
+
         console.log('Data saved successfully:', {
           itemName,
           brandName,
@@ -56,15 +62,21 @@ const AddProduct = () => {
           phone,
           itemPrice,
           image,
+          // productType
         });
-        router.push('/');
+        setTimeout(() => {
+          setIsModalOpen(false)
+          router.push('/');
+        }, 2000);
       } else {
         throw new Error('Failed to Add Item');
       }
     } catch (error) {
       console.log(error);
-    }finally {
-      setLoading(false); 
+    } finally {
+      setLoading(false);
+
+
     }
   };
 
@@ -103,9 +115,50 @@ const AddProduct = () => {
             <label for="file" class="peer-focus:font-medium absolute text-sm text dark:text duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text peer-focus:dark:text peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Item Image</label>
           </div>
         </div>
+        {/* <div class="relative text-[15px] z-0 w-full mb-5 group">
+          <label className="block text-white mb-2">Product Type:</label>
+          <div className="flex items-center">
+            <label className="mr-3 flex items-center">
+              <input
+                type="radio"
+                value="edible"
+                checked={productType === 'edible'}
+                onChange={() => setProductType('edible')}
+                className="mr-1"
+              />
+              <span className="text-white">Edible</span>
+            </label>
+            <label className="flex items-center">
+              <input
+                type="radio"
+                value="non-edible"
+                checked={productType === 'non-edible'}
+                onChange={() => setProductType('non-edible')}
+                className="mr-1"
+              />
+              <span className="text-white">Non-edible</span>
+            </label>
+          </div>
+        </div> */}
+
+
+
+
+
+
         <button className='btn btn-outline btn-accent' type="submit" disabled={loading}>
           {loading ? 'Adding...' : 'Add'}
         </button>
+
+        {isModalOpen && (
+          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+            <div className="mt-[40px] p-8 rounded-md shadow-md">
+              <div className='mb-4 z-40'>
+                <Lottie animationData={Check} />
+              </div>
+            </div>
+          </div>
+        )}
 
       </form>
 

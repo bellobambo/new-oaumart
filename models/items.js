@@ -24,7 +24,12 @@ const addItemSchema = new Schema(
         image: {
             type: String,
             required: [true, 'Image is Required'],
-        },
+        }
+        // productType: {
+        //     type: String,
+        //     enum: ['Edible', 'Non-edible'],
+        //     required: [true, 'Product Type is Required'],
+        //   },
     },
     {
         timestamps: true,

@@ -7,7 +7,7 @@ import { Emailjs } from "./Emailjs";
 
 const getItems = async () => {
   try {
-    const res = await fetch('http://localhost:3000/api/items', {
+    const res = await fetch('https://www.oaumart.com/api/items', {
       cache: "no-store",
     });
 
@@ -24,6 +24,7 @@ const getItems = async () => {
 
 const Product = () => {
   const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [pageNumber, setPageNumber] = useState(0);
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -31,6 +32,7 @@ const Product = () => {
     const fetchData = async () => {
       const { items } = await getItems();
       setItems(items);
+      setLoading(false);
     };
 
     fetchData();
@@ -53,36 +55,49 @@ const Product = () => {
     const date = new Date(timestamp);
     return date.toLocaleString(); // Adjust options as needed
   };
-  
+
 
   const displayItems = filteredItems
   .slice()
-  .sort((a, b) => b.createdAt - a.createdAt) 
-  .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)) 
+  .sort((a, b) => b.createdAt - a.createdAt)
+  .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
   .slice(pagesVisited, pagesVisited + itemsPerPage)
   .map((t) => (
     <div key={t._id} className="card w-96 bg-base-100 shadow-xl my-10">
-      <div className=" items-center border-2 border-yellow-400 rounded-md p-4">
-        <figure>
-          <LazyLoadImage
-            alt="img"
-            placeholderSrc={t.image}
-            effect="blur"
-            src={`/uploads/${t.image}`}
-            className="h-56 transform hover:scale-125 transition-transform duration-300 ease-in-out"
-          />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">{t.itemName}</h2>
-          <p>{t.itemDesc}</p>
-          <small><strong>{formattedDate(t.createdAt)}</strong></small>
-          <div className="card-actions justify-end">
-            <Link href={`https://wa.me/${t.phone}`} className='btn btn-accent' >
-              Bargain
-            </Link>
+      {loading ? (
+        <div className="flex flex-col gap-4 w-52">
+          <div className="skeleton h-32 w-full"></div>
+          <div className="skeleton h-4 w-28"></div>
+          <div className="skeleton h-4 w-full"></div>
+          <div className="skeleton h-4 w-full"></div>
+        </div>
+      ) : (
+        <div className=" items-center border-double border-2 border-sky-500 rounded-md p-4">
+          <figure>
+            <LazyLoadImage
+              alt="img"
+              placeholderSrc={t.image}
+              effect="blur"
+              src={`/uploads/${t.image}`}
+              className="h-56 transform hover:scale-125 transition-transform duration-300 ease-in-out"
+            />
+          </figure>
+          <div className="card-body">
+            <h2 className="card-title">{t.itemName}</h2>
+            <h2 className="font-mono">{t.brandName}</h2>
+            <p>{t.itemDesc}</p>
+            <small className="flex justify-between">
+              <strong>{formattedDate(t.createdAt)}</strong>
+              {/* <div className="badge badge-outline">{t.productType}</div> */}
+            </small>
+            <div className="card-actions justify-end">
+              <Link href={`https://wa.me/${t.phone}`} className='btn btn-accent'>
+                Bargain
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   ));
 
@@ -90,7 +105,7 @@ const Product = () => {
   return (
     <>
       <div className="flex flex-col justify-center">
-      <h1 className=" text-center my-4 text-[40px] font-semibold">Our Products</h1>
+        <h1 className=" text-center my-4 text-[40px] font-semibold">Our Products</h1>
 
         <div className="flex justify-center text-center">
           <input
@@ -107,7 +122,7 @@ const Product = () => {
 
         <div className="flex space-x-2 justify-center text-center">
           <button
-            className='btn btn-accent' 
+            className='btn btn-accent'
             onClick={() => changePage(pageNumber - 1)}
             disabled={pageNumber === 0}
           >
@@ -123,7 +138,7 @@ const Product = () => {
             </button>
           ))}
           <button
-            className='btn btn-accent' 
+            className='btn btn-accent'
             onClick={() => changePage(pageNumber + 1)}
             disabled={pageNumber === pageCount - 1}
           >
