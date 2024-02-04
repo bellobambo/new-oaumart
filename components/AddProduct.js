@@ -84,39 +84,39 @@ const AddProduct = () => {
     <div className="flex flex-col items-center justify-center h-screen mt-[-200px]">
       <h1 className=" text-center my-4 text-[40px] font-semibold mt-4">Add Product</h1>
 
-      <form onSubmit={handleSubmit} class="max-w-md mx-auto text-[40px]">
-        <div class="relative z-0 w-full mb-5 group">
-          <input type="text" onChange={(e) => setItemName(e.target.value)} name="name" id="name" class="block py-2.5 px-0 w-full text-sm text-yellow-900 bg-transparent border-0 border-b-2 border-yellow-300 appearance-none dark:text-white dark:border-yellow-600 dark:focus:border-yellow-500 focus:outline-none focus:ring-0 focus:border-yellow-600 peer" placeholder=" " required />
-          <label for="name" class="peer-focus:font-medium absolute text-sm text-white dark:text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-white peer-focus:dark:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 text-[30px]">Product Name</label>
+      <form onSubmit={handleSubmit} className="max-w-md mx-auto text-[40px]">
+        <div className="relative z-0 w-full mb-5 group">
+          <input type="text" onChange={(e) => setItemName(e.target.value)} name="name" id="name" className="block py-2.5 px-0 w-full text-sm text-yellow-900 bg-transparent border-0 border-b-2 border-yellow-300 appearance-none dark:text-white dark:border-yellow-600 dark:focus:border-yellow-500 focus:outline-none focus:ring-0 focus:border-yellow-600 peer" placeholder=" " required />
+          <label for="name" className="peer-focus:font-medium absolute text-sm text-white dark:text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-white peer-focus:dark:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 text-[30px]">Product Name</label>
         </div>
 
-        <div class="relative z-0 w-full mb-5 group">
-          <input type="text" onChange={(e) => setBrandName(e.target.value)} name="name" id="name" class="block py-2.5 px-0 w-full text-sm text-yellow-900 bg-transparent border-0 border-b-2 border-yellow-300 appearance-none dark:text-white dark:border-yellow-600 dark:focus:border-yellow-500 focus:outline-none focus:ring-0 focus:border-yellow-600 peer" placeholder=" " required />
-          <label for="name" class="peer-focus:font-medium absolute text-sm text-white dark:text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-white peer-focus:dark:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 text-[30px]">Brand Name</label>
+        <div className="relative z-0 w-full mb-5 group">
+          <input type="text" onChange={(e) => setBrandName(e.target.value)} name="name" id="name" className="block py-2.5 px-0 w-full text-sm text-yellow-900 bg-transparent border-0 border-b-2 border-yellow-300 appearance-none dark:text-white dark:border-yellow-600 dark:focus:border-yellow-500 focus:outline-none focus:ring-0 focus:border-yellow-600 peer" placeholder=" " required />
+          <label for="name" className="peer-focus:font-medium absolute text-sm text-white dark:text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-white peer-focus:dark:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 text-[30px]">Brand Name</label>
         </div>
 
-        <div class="grid md:grid-cols-2 md:gap-6">
-          <div class="relative z-0 w-full mb-5 group">
-            <input type="number" onChange={(e) => setItemPrice(e.target.value)} name="floating_first_name" id="floating_first_name" class="block py-2.5 px-0 w-full text-sm text-yellow-900 bg-transparent border-0 border-b-2 border-yellow-300 appearance-none dark:text-white dark:border-yellow-600 dark:focus:border-yellow-500 focus:outline-none focus:ring-0 focus:border-yellow-600 peer" placeholder=" " required />
-            <label for="floating_first_name" class="peer-focus:font-medium absolute text-sm text-white dark:text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-white peer-focus:dark:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Product Price</label>
+        <div className="grid md:grid-cols-2 md:gap-6">
+          <div className="relative z-0 w-full mb-5 group">
+            <input type="number" onChange={(e) => setItemPrice(e.target.value)} name="floating_first_name" id="floating_first_name" className="block py-2.5 px-0 w-full text-sm text-yellow-900 bg-transparent border-0 border-b-2 border-yellow-300 appearance-none dark:text-white dark:border-yellow-600 dark:focus:border-yellow-500 focus:outline-none focus:ring-0 focus:border-yellow-600 peer" placeholder=" " required />
+            <label for="floating_first_name" className="peer-focus:font-medium absolute text-sm text-white dark:text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-white peer-focus:dark:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Product Price</label>
           </div>
-          <div class="relative z-0 w-full mb-5 group">
-            <input onChange={(e) => setPhone(e.target.value)} type="number" name="phone" id="phone" class="block py-2.5 px-0 w-full text-sm text-yellow-900 bg-transparent border-0 border-b-2 border-yellow-300 appearance-none dark:text-white dark:border-yellow-600 dark:focus:border-yellow-500 focus:outline-none focus:ring-0 focus:border-yellow-600 peer" placeholder=" " required />
-            <label for="phone" class="peer-focus:font-medium absolute text-sm text-white dark:text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-white peer-focus:dark:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone Number</label>
-          </div>
-        </div>
-        <div class="grid md:grid-cols-2 md:gap-6">
-          <div class="relative z-0 w-full mb-5 group">
-            <input onChange={(e) => setItemDesc(e.target.value)} type="text" name="desc" id="desc" class="block py-2.5 px-0 w-full text-sm text-yellow-900 bg-transparent border-0 border-b-2 border-yellow-300 appearance-none dark:text-white dark:border-yellow-600 dark:focus:border-yellow-500 focus:outline-none focus:ring-0 focus:border-yellow-600 peer" placeholder=" " />
-            <label for="desc" class="peer-focus:font-medium absolute text-sm text-white dark:text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-white peer-focus:dark:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Item Description</label>
-          </div>
-          <div class="relative z-0 w-full mb-5 group">
-            <input onChange={(e) => setImage(e.target.files[0])} type="file" name="file" id="file" class="block py-2.5 px-0 w-full text-sm text-yellow-900 bg-transparent border-0 border-b-2 border-yellow-300 appearance-none dark:text-white dark:border-yellow-600 dark:focus:border-yellow-500 focus:outline-none focus:ring-0 focus:border-yellow-600 peer " placeholder=" " required />
-            <label for="file" class="peer-focus:font-medium absolute text-sm text dark:text duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text peer-focus:dark:text peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Item Image</label>
+          <div className="relative z-0 w-full mb-5 group">
+            <input onChange={(e) => setPhone(e.target.value)} type="number" name="phone" id="phone" className="block py-2.5 px-0 w-full text-sm text-yellow-900 bg-transparent border-0 border-b-2 border-yellow-300 appearance-none dark:text-white dark:border-yellow-600 dark:focus:border-yellow-500 focus:outline-none focus:ring-0 focus:border-yellow-600 peer" placeholder=" " required />
+            <label for="phone" className="peer-focus:font-medium absolute text-sm text-white dark:text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-white peer-focus:dark:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone Number</label>
           </div>
         </div>
-        {/* <div class="relative text-[15px] z-0 w-full mb-5 group">
-          <label className="block text-white mb-2">Product Type:</label>
+        <div className="grid md:grid-cols-2 md:gap-6">
+          <div className="relative z-0 w-full mb-5 group">
+            <input onChange={(e) => setItemDesc(e.target.value)} type="text" name="desc" id="desc" className="block py-2.5 px-0 w-full text-sm text-yellow-900 bg-transparent border-0 border-b-2 border-yellow-300 appearance-none dark:text-white dark:border-yellow-600 dark:focus:border-yellow-500 focus:outline-none focus:ring-0 focus:border-yellow-600 peer" placeholder=" " />
+            <label for="desc" className="peer-focus:font-medium absolute text-sm text-white dark:text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-white peer-focus:dark:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Item Description</label>
+          </div>
+          <div className="relative z-0 w-full mb-5 group">
+            <input onChange={(e) => setImage(e.target.files[0])} type="file" name="file" id="file" className="block py-2.5 px-0 w-full text-sm text-yellow-900 bg-transparent border-0 border-b-2 border-yellow-300 appearance-none dark:text-white dark:border-yellow-600 dark:focus:border-yellow-500 focus:outline-none focus:ring-0 focus:border-yellow-600 peer " placeholder=" " required />
+            <label for="file" className="peer-focus:font-medium absolute text-sm text dark:text duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text peer-focus:dark:text peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Item Image</label>
+          </div>
+        </div>
+        {/* <div className="relative text-[15px] z-0 w-full mb-5 group">
+          <label classNameName="block text-white mb-2">Product Type:</label>
           <div className="flex items-center">
             <label className="mr-3 flex items-center">
               <input
