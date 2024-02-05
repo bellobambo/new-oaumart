@@ -5,7 +5,7 @@ const f = createUploadthing();
  
 const auth = (req) => ({ id: "fakeId" }); // Fake auth function
  
-// FileRouter for your app, can contain multiple FileRoutes
+
 export const ourFileRouter = {
   // Define as many FileRoutes as you like, each with a unique routeSlug
   imageUploader: f({ image: { maxFileSize: "4MB" } })
@@ -15,7 +15,7 @@ export const ourFileRouter = {
       const user = await auth(req);
  
       // If you throw, the user will not be able to upload
-      if (!user) throw new UploadThingError("Unauthorized");
+      // if (!user) throw new UploadThingError("Unauthorized");
  
       // Whatever is returned here is accessible in onUploadComplete as `metadata`
       return { userId: user.id };
