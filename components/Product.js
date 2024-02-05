@@ -58,6 +58,16 @@ const Product = () => {
 
 
   const displayItems = filteredItems
+  .reduce((uniqueItems, currentItem) => {
+
+    const existingItem = uniqueItems.find(item => item.brandName === currentItem.brandName);
+
+    if (!existingItem) {
+      uniqueItems.push(currentItem);
+    }
+
+    return uniqueItems;
+  }, [])
   .slice()
   .sort((a, b) => b.createdAt - a.createdAt)
   .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
@@ -77,9 +87,8 @@ const Product = () => {
             <LazyLoadImage
               alt="img"
               placeholderSrc={t.image}
-              effect="blur"
-              src={`/uploads/${t.image}`}
-              className="h-56 transform hover:scale-125 transition-transform duration-300 ease-in-out"
+              src={t.image}
+              className="h-56 w-full transform hover:scale-125 transition-transform duration-300 ease-in-out"
             />
           </figure>
           <div className="card-body">
@@ -88,7 +97,7 @@ const Product = () => {
             <p>{t.itemDesc}</p>
             <small className="flex justify-between">
               <strong>{formattedDate(t.createdAt)}</strong>
-              {/* <div className="badge badge-outline">{t.productType}</div> */}
+              <div className="badge badge-outline">{t.itemPrice}</div>
             </small>
             <div className="card-actions justify-end">
               <Link href={`https://wa.me/${t.phone}`} className='btn btn-accent'>
@@ -128,15 +137,7 @@ const Product = () => {
           >
             Previous
           </button>
-          {Array.from({ length: pageCount }).map((_, index) => (
-            <button
-              key={index}
-              className={`pagination__link ${pageNumber === index ? 'pagination__link--active' : ''}`}
-              onClick={() => changePage(index)}
-            >
-              {index + 1}
-            </button>
-          ))}
+      
           <button
             className='btn btn-accent'
             onClick={() => changePage(pageNumber + 1)}

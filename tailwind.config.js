@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+import { withUt } from "uploadthing/tw";
+export default withUt({
+  
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}', // Note the addition of the `app` directory.
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -12,4 +14,4 @@ module.exports = {
     themes: ["light", "dark", "cupcake", "dim", "luxury", "aqua"],
   },
   plugins: [require("daisyui")],
-}
+})
