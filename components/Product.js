@@ -125,8 +125,11 @@ const Product = () => {
           />
         </div>
 
-        <div className="card-container grid grid-cols-2 place-items-center">
+        <div className="card-container sm:ml-[140px] md:ml-0 md:grid md:grid-cols-2  place-items-center">
+
+
           {displayItems}
+
         </div>
 
         <div className="flex space-x-2 justify-center text-center">
