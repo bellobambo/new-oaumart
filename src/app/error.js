@@ -10,7 +10,7 @@ export default function Error({ error, reset }) {
  
   return (
     <div className="flex items-center justify-center h-screen gap-4">
-      <h2>Something went wrong!</h2>
+      <h2>Something Went Wrong!</h2>
       <button
         onClick={
           () => reset()
