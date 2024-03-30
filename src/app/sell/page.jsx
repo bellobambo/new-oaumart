@@ -45,7 +45,7 @@ export default function page() {
 
 
 
-            router.push('/additem');
+window.location.href = '/additem'
 
         },
         onClose: () => alert("Wait! Don't leave :("),
@@ -80,7 +80,8 @@ export default function page() {
 
 
 
-            router.push('/additem');
+            window.location.href = '/additem'
+
 
         },
 
@@ -119,7 +120,8 @@ export default function page() {
 
 
 
-            router.push('/additem');
+            window.location.href = '/additem'
+
 
         },
 
