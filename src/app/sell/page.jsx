@@ -16,7 +16,7 @@ export default function page() {
 
     const { status, data: session } = useSession();
 
-    const publicKey = 'pk_live_1f121e44506945b6682c3d1e255e7bed49624043';
+    const publicKey = 'pk_test_6b3fd973a0a596ad9e6d951d1fa0bb437276f457';
 
     const amount = 150000
 
