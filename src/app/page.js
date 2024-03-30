@@ -6,6 +6,7 @@ import Product from '../../components/Product';
 import { Suspense, useEffect, useState } from 'react';
 import { Emailjs } from '../../components/Emailjs';
 import Toast from '../../components/Toast';
+import Loading from '../../components/Loading';
 // import { connectMongodb } from '../../lib/mongodb';
 
 
@@ -60,6 +61,7 @@ export default function Home() {
     <div>
       <div className="flex flex-col items-center text-center m-5">
       <Toast />
+
 
         <br />
         {/* <details className="dropdown my-3">
