@@ -22,7 +22,7 @@ export default function About() {
                     items ranges from edibles to non-edibles!
                     what else🤷🏽.
 
-                    It's like a mini marketplace on campus, making student life a  more stress free. Sell what your Products and even what  don't need.
+                    It's an online marketplace on campus, we aim at making student life a more stress free one. Sell what your valuable Product.
                 </span>
 
             </main>
@@ -30,7 +30,7 @@ export default function About() {
             <br></br>
             <span className='mt-10'>
 
-                Join us, and let's make campus life a bit more fun, one deal at a time. OAUmart: where deals happen, and student pockets stay happy. 🌟🎉
+                Join us, and let's make your campus life a bit more fun, one deal at a time. OAUmart: where deals happen, and student pockets stay happy. 🌟🎉
 
             </span>
         </div>

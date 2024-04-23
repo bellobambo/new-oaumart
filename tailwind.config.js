@@ -11,7 +11,7 @@ export default withUt({
     './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   daisyui: {
-    themes: ["light", "dark", "cupcake", "dim", "luxury", "aqua"],
+    themes: ["light", "dark", "cupcake", "dim", "luxury", "aqua", "retro"],
   },
   plugins: [require("daisyui")],
 })
