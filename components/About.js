@@ -10,7 +10,7 @@ export default function About() {
             <main>
                 Your go-to spot for campus Items! 🎓🛍️. founded in 2023 second semester break 
 
-                Here at OAUmart, we've something special just for you. Picture the amount of stress we go through to get what we feel we should get in a short time? here in OAUmart students buy and sell cool items, making campus life even more awesome.
+                Here at OAUmart, we've something special just for you. Picture the amount of stress we go through to get what we feel we should get in a short time? here in OAUmart students buy and sell cool items, making campus life even more stress free.
 
                 <br></br>
             <br></br>
