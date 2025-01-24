@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
 import Check from "./Check.json";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -18,6 +18,10 @@ const AddProduct = () => {
   const [loading, setLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [productType, setProductType] = useState("");
+  const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+  const UploadButton = dynamic(() => import("@/utils/uploadthing"), {
+    ssr: false,
+  });
 
   const router = useRouter();
 
