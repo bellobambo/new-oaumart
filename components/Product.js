@@ -1,18 +1,16 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import 'react-lazy-load-image-component/src/effects/blur.css';
-import Skeleton from "./Skeleton";
-import { Emailjs } from "./Emailjs";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const getItems = async () => {
   try {
-    const res = await fetch('https://www.oaumart.com/api/items', {
+    const res = await fetch("http://localhost:3001/api/items", {
       cache: "no-store",
     });
 
     if (!res.ok) {
-      throw new Error('failed to fetch items');
+      throw new Error("failed to fetch items");
     }
 
     return res.json();
@@ -20,16 +18,17 @@ const getItems = async () => {
     console.log("Error Loading Items", error);
     return [];
   }
-}
+};
 
 const Product = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [pageNumber, setPageNumber] = useState(0);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       const { items } = await getItems();
       setItems(items);
       setLoading(false);
@@ -56,32 +55,23 @@ const Product = () => {
     return date.toLocaleString(); // Adjust options as needed
   };
 
-
   const displayItems = filteredItems
-  .reduce((uniqueItems, currentItem) => {
+    .reduce((uniqueItems, currentItem) => {
+      const existingItem = uniqueItems.find(
+        (item) => item.brandName === currentItem.brandName
+      );
 
-    const existingItem = uniqueItems.find(item => item.brandName === currentItem.brandName);
+      if (!existingItem) {
+        uniqueItems.push(currentItem);
+      }
 
-    if (!existingItem) {
-      uniqueItems.push(currentItem);
-    }
-
-    return uniqueItems;
-  }, [])
-  .slice()
-  .sort((a, b) => b.createdAt - a.createdAt)
-  .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
-  .slice(pagesVisited, pagesVisited + itemsPerPage)
-  .map((t) => (
-    <div key={t._id} className="card w-96 bg-base-100 shadow-xl my-10">
-      {loading ? (
-        <div className="flex flex-col gap-4 w-52">
-          <div className="skeleton h-32 w-full"></div>
-          <div className="skeleton h-4 w-28"></div>
-          <div className="skeleton h-4 w-full"></div>
-          <div className="skeleton h-4 w-full"></div>
-        </div>
-      ) : (
+      return uniqueItems;
+    }, [])
+    .slice()
+    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+    .slice(pagesVisited, pagesVisited + itemsPerPage)
+    .map((t) => (
+      <div key={t._id} className="card w-96 bg-base-100 shadow-xl my-10">
         <div className=" items-center border-double border-2 border-sky-500 rounded-md p-4">
           <figure>
             <LazyLoadImage
@@ -100,21 +90,24 @@ const Product = () => {
               <div className="badge badge-outline">{t.itemPrice}</div>
             </small>
             <div className="card-actions justify-end">
-              <Link href={`https://wa.me/${t.phone}`} className='btn btn-accent'>
+              <Link
+                href={`https://wa.me/${t.phone}`}
+                className="btn btn-accent"
+              >
                 Bargain
               </Link>
             </div>
           </div>
         </div>
-      )}
-    </div>
-  ));
-
+      </div>
+    ));
 
   return (
     <>
       <div className="flex flex-col justify-center">
-        <h1 className=" text-center my-4 text-[40px] font-semibold">Our Products</h1>
+        <h1 className=" text-center my-4 text-[40px] font-semibold">
+          Our Products
+        </h1>
 
         <div className="flex justify-center text-center">
           <input
@@ -125,30 +118,35 @@ const Product = () => {
           />
         </div>
 
-        <div className="card-container sm:ml-[140px] md:ml-0 md:grid md:grid-cols-2  place-items-center">
+        {loading ? (
+          <div className="flex justify-center items-center my-8">
+            <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-blue-500"></div>
+          </div>
+        ) : (
+          <>
+            <div className="card-container sm:ml-[140px] md:ml-0 md:grid md:grid-cols-2  place-items-center">
+              {displayItems}
+            </div>
 
+            <div className="flex space-x-2 justify-center text-center">
+              <button
+                className="btn btn-accent"
+                onClick={() => changePage(pageNumber - 1)}
+                disabled={pageNumber === 0}
+              >
+                Previous
+              </button>
 
-          {displayItems}
-
-        </div>
-
-        <div className="flex space-x-2 justify-center text-center">
-          <button
-            className='btn btn-accent'
-            onClick={() => changePage(pageNumber - 1)}
-            disabled={pageNumber === 0}
-          >
-            Previous
-          </button>
-      
-          <button
-            className='btn btn-accent'
-            onClick={() => changePage(pageNumber + 1)}
-            disabled={pageNumber === pageCount - 1}
-          >
-            Next
-          </button>
-        </div>
+              <button
+                className="btn btn-accent"
+                onClick={() => changePage(pageNumber + 1)}
+                disabled={pageNumber === pageCount - 1}
+              >
+                Next
+              </button>
+            </div>
+          </>
+        )}
       </div>
     </>
   );
