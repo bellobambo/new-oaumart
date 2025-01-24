@@ -48,7 +48,7 @@ const AddProduct = () => {
       formData.append("image", image);
       // formData.append('productType', productType);
 
-      const res = await fetch("http://localhost:3001/api/items", {
+      const res = await fetch("https://new-oaumart-eula.vercel.app/api/items", {
         method: "POST",
         body: formData,
       });

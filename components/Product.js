@@ -7,7 +7,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 
 const getItems = async () => {
   try {
-    const res = await fetch("http://localhost:3001/api/items", {
+    const res = await fetch("https://new-oaumart-eula.vercel.app/api/items", {
       cache: "no-store",
     });
 
